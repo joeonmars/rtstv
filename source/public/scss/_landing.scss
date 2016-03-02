@@ -1,0 +1,145 @@
+body{
+	&[data-page='error'],
+	&[data-page='unsupported']{
+		min-width: 320px;
+		min-height: 320px;
+		height: 100%;
+	}
+}
+
+.landing{
+	position: relative;
+	@include container(12);
+	width: $max_grid_width;
+	height: calc(100% - 10rem);
+	padding-top: 10rem;
+	text-align: center;
+	text-transform: uppercase;
+
+	.marquee{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		color: #fff;
+
+		@include flexbox((
+			display: flex,
+			align-items: center,
+			justify-content: center
+		));
+
+		>.corners{
+			@include absoluteFullSize;
+
+			>div{
+				position: absolute;
+				z-index: 2;
+				text-transform: uppercase;
+				font-size: 8vh;
+				line-height: 2;
+				@include font-book;
+
+				&.tl{
+					top: 0;
+					left: 0;
+				}
+
+				&.tr{
+					top: 0;
+					right: 0;
+				}
+
+				&.bl{
+					bottom: 0;
+					left: 0;
+				}
+
+				&.br{
+					bottom: 0;
+					right: 0;
+				}
+			}
+		}
+
+		>.inner{
+			position: relative;
+			z-index: 1;
+
+			>.upper{
+				height: 0;
+				padding-bottom: 20%;
+				background-image: image-url('gold-frame-upper.png');
+				background-repeat: no-repeat;
+				background-position: center bottom;
+				background-size: 100% auto;
+
+				.logo{
+					@include translateY(-35%);
+
+					.statue{
+						font-size: 19em;
+					}
+
+					h2{
+						font-size: 1.5rem;
+						line-height: 4;
+					}
+				}
+			}
+
+			>h3{
+				margin: 2vh 0;
+				font-size: 7.6em;
+				line-height: 1;
+			}
+
+			>.lower{
+				height: 0;
+				padding-bottom: 20%;
+				background-image: image-url('gold-frame-lower.png');
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 100% auto;
+			}
+		}
+	}
+
+	@include breakpoint($break_tablet_landscape) {
+		.marquee{
+			font-size: .8rem;
+		}
+	}
+
+	@include breakpoint($break_phone) {
+		.marquee{
+			font-size: .5rem;
+		}
+	}
+}
+
+body[data-page='unsupported'] {
+	.landing{
+		.lower{
+			p{
+				font-size: 1.5em;
+				line-height: 3;
+				@include font-smoothing;
+			}
+
+			ul{
+				li{
+					display: inline-block;
+					vertical-align: middle;
+					font-size: 5em;
+					margin: 0 .8em;
+					@include transition(color .25s);
+
+					&:hover{
+						color: $gold;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+@mixin font-light(){
+    font-weight: 300;
+}
+
+@mixin font-book(){
+    font-weight: 400;
+}
+
+@mixin font-medium(){
+    font-weight: 500;
+}
+
+@mixin font-heavy(){
+    font-weight: 700;
+}
+
+@mixin font-extra-bold(){
+    font-weight: 800;
+}
+
+$font_system: "futura-pt", sans-serif;

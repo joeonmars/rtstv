@@ -1,0 +1,195 @@
+.track {
+	width: 5px !important;
+	height: calc(100% - 12px) !important;
+	margin-top: 6px;
+	margin-right: 6px;
+
+	.handle{
+		@include border-radius(4px);
+		background-color: $gold;
+		cursor: default;
+		@include transition(background-color .25s);
+
+		&:hover, &:active{
+			background-color: darken($gold, 5);
+		}
+	}
+
+	[data-mobile] &{
+		display: none !important;
+	}
+}
+
+%reset-button{
+  @include user-select('none');
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  @include user-select('none');
+  @include appearance(none);
+  cursor: pointer;
+}
+
+.primary-button{
+	@include perspective(800px);
+	display: inline-block;
+
+	>button, >a{
+		position: relative;
+		margin: 0 auto;
+		display: inline-block;
+		background: image-url('button-gold-texture.jpg') center center;
+		background-size: cover !important;
+		font-family: $font_system;
+		@include font-book;
+		text-transform: uppercase;
+		font-size: 1.6rem;
+		letter-spacing: .1rem;
+		color: #fff;
+		padding: 2.4rem 3.8rem;
+		outline: 1px solid transparent;
+		@include transform-style(preserve-3d);
+		@include transition(transform .3s);
+
+		&:before{
+			content: '';
+			@include absoluteFullSize;
+			background: rgba(#fff, .2);
+			opacity: 0;
+			@include transition(opacity .3s);
+		}
+
+		&:after{
+			content: '';
+			width: 100%;
+			height: 40%;
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			top: 100%;
+			background: darken($gold, 25);
+			@include transform-origin(0%, 0%);
+			@include rotateX(-90deg);
+		}
+
+		[data-desktop] &{
+			&:hover:not([disabled]){
+				@include rotateX(15deg);
+				
+				&:before{
+					opacity: 1;
+				}
+			}
+		}
+
+		[data-mobile] &{
+			&:active{
+				@include rotateX(15deg);
+				
+				&:before{
+					opacity: 1;
+				}
+			}
+		}
+
+		&:disabled{
+			color: $text_gray;
+			background: image-url('button-silver-texture.jpg') center center;
+		}
+	}
+
+	&.sm{
+		>button{
+			padding: 1.8rem 3.8rem;
+		}
+	}
+}
+
+.post-button{
+	margin: 0;
+	font-size: 1.6rem;
+	color: $gold;
+
+	&:disabled{
+		color: $text_gray;
+		opacity: .4;
+	}
+}
+
+.close-button{
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	font-size: 3rem;
+	color: #fff;
+	@include transition(color .25s);
+
+	&:hover{
+		color: $gold;
+	}
+}
+
+.golden-heading{
+	color: $gold;
+	text-transform: uppercase;
+	@include font-heavy;
+	font-size: 6rem;
+	line-height: 1.25;
+
+	&.use-canvas{
+		font-size: 0;
+		
+		>canvas{
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.text-link{
+	position: relative;
+	@include transition(color .2s);
+
+	&:after{
+		position: absolute;
+		left: 0;
+		top: 100%;
+		content: '';
+		width: 100%;
+		height: 4px;
+		background: $gold;
+		opacity: 0;
+		@include translateY(4px);
+		@include transition(opacity .2s, transform .2s $easeOutCubic);
+	}
+
+	&:hover{
+		color: $gold;
+
+		&:after{
+			opacity: 1;
+			@include translateY(0);
+		}
+	}
+}
+
+.scroll-button{
+	display: inline-block;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	color: #fff;
+
+	>div{
+		@include animation(bounce 3s infinite);
+
+		>.icon{
+			font-size: 2.8rem;
+			margin-top: .5rem;
+			@include animation(bounce 3s infinite);
+		}
+	}
+}
