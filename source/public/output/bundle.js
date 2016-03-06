@@ -40328,6 +40328,9 @@ var Promo = React.createClass( {displayName: "Promo",
 
 		this.resize();
 
+		// Disable page scroll
+		$('html').toggleClass('no-scrollbar', true);
+
 		// Create a matrix for wiggling the figure
 		var CssToMatrix = require('css-to-matrix');
 		this.figureCssToMatrix = new CssToMatrix();
@@ -40367,6 +40370,8 @@ var Promo = React.createClass( {displayName: "Promo",
 	},
 
 	enableScroll: function() {
+
+		$('html').toggleClass('no-scrollbar', false);
 
 		this.setState({
 			loading: false

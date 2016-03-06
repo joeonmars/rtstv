@@ -45,8 +45,6 @@
     "grunt-webfont": "~0.4.0",
     "grunt-zip": "^0.17.1",
     "jquery": "^2.1.4",
-    "jquery-mousewheel": "^3.1.13",
-    "keymaster": "^1.6.2",
     "remapify": "latest",
     "scrollmonitor": "^1.0.12"
   },
