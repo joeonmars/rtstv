@@ -22,7 +22,7 @@
 
 @include keyframes(app-launch) {
   0% {
-    @include transform(scale(.2) translateY(100%));
+    @include transform(scale(.5) translateY(50%));
     opacity: 0;
   }
   100% {

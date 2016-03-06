@@ -36,6 +36,16 @@
 			&.active{
 				color: $orange;
 			}
+
+			&:not(.active) {
+				a{
+					@include transition(opacity .25s);
+
+					&:hover{
+						opacity: .25;
+					}
+				}
+			}
 		}
 	}
 }

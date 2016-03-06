@@ -40457,7 +40457,11 @@ var Promo = React.createClass( {displayName: "Promo",
 				React.createElement("article", null, 
 					React.createElement("div", null, 
 						React.createElement("h1", {className: "heading", dangerouslySetInnerHTML: {__html: data.heading}}), 
-						React.createElement("div", {className: "body", dangerouslySetInnerHTML: {__html: data.body}})
+						React.createElement("div", {className: "body", dangerouslySetInnerHTML: {__html: data.body}}), 
+						React.createElement("div", {className: "cta"}, 
+							React.createElement("a", {href: "https://itunes.apple.com/us/app/reuters-tv/id944245256", className: "appstore"}), 
+							React.createElement("a", {href: "https://play.google.com/store/apps/details?id=com.thomsonreuters.reuterstv", className: "googleplay"})
+						)
 					)
 				), 
 

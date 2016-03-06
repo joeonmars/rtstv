@@ -46,6 +46,24 @@
 			display: table-cell;
 			vertical-align: middle;
 		}
+
+		.cta{
+			margin-top: 4rem;
+
+			>a{
+				display: inline-block;
+				vertical-align: top;
+				margin-right: gutter();
+
+				&.appstore{
+					@include retina-ui('appstore');
+				}
+				
+				&.googleplay{
+					@include retina-ui('googleplay');
+				}
+			}
+		}
 	}
 
 	figure{
@@ -63,7 +81,7 @@
 		>.background{
 			@include absoluteBottomLeft;
 			width: 100%;
-			height: 95%;
+			height: 98%;
 			background-image: image-url('promo-figure.png');
 			background-position: center bottom;
 			background-size: contain;
@@ -80,7 +98,7 @@
 					@include absoluteFullSize;
 					background-image: image-url('promo-app-background.png');
 					background-size: 100% 100%;
-					@include animation(app-launch .85s 1.15s $easeOutQuint both paused);
+					@include animation(app-launch .75s 1.45s $easeOutQuint both paused);
 				}
 
 				>.app-sponsor{
@@ -90,7 +108,7 @@
 					background-size: 100% auto;
 					background-repeat: no-repeat;
 					background-position: bottom;
-					@include animation(app-sponsor-slide-in .85s 1.35s $easeOutCubic both paused);
+					@include animation(app-sponsor-slide-in .75s 1.85s $easeOutCubic both paused);
 				}
 			}
 		}
@@ -463,8 +481,8 @@
 				}
 
 				h3{
-					font-size: 2.2rem;
-					line-height: 1.3;
+					font-size: 2rem;
+					line-height: 1.15;
 					@include font-bold;
 				}
 

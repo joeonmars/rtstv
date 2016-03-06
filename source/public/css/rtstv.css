@@ -58,17 +58,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * 5. use the sprite-image in your Sass/Scss using: '@include use-sprite(<sprite-name>)'
  */
 @font-face {
-  font-family: "Knowledge";
-  src: url('../fonts/knowledge/knowledge-regular.eot?1457063115') format('embedded-opentype'), url('../fonts/knowledge/knowledge-regular.eot?&1457063115#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-regular.woff?1457062988') format('woff'), url('../fonts/knowledge/knowledge-regular.ttf?1457063090') format('truetype'); }
+  font-family: "KnowledgeUltraLightRegular";
+  src: url('../fonts/knowledge/knowledge-ultralight-webfont.eot?1457290764') format('embedded-opentype'), url('../fonts/knowledge/knowledge-ultralight-webfont.eot?&1457290764#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-ultralight-webfont.woff?1457290771') format('woff'), url('../fonts/knowledge/knowledge-ultralight-webfont.ttf?1457290770') format('truetype'); }
 @font-face {
-  font-family: "Knowledge";
-  src: url('../fonts/knowledge/knowledge-regularitalic.eot?1457063742') format('embedded-opentype'), url('../fonts/knowledge/knowledge-regularitalic.eot?&1457063742#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-regularitalic.woff?1457063748') format('woff'), url('../fonts/knowledge/knowledge-regularitalic.ttf?1457063745') format('truetype'); }
+  font-family: "KnowledgeUltraLightItalicRg";
+  src: url('../fonts/knowledge/knowledge-ultralightitalic-webfont.eot?1457290772') format('embedded-opentype'), url('../fonts/knowledge/knowledge-ultralightitalic-webfont.eot?&1457290772#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-ultralightitalic-webfont.woff?1457290778') format('woff'), url('../fonts/knowledge/knowledge-ultralightitalic-webfont.ttf?1457290777') format('truetype'); }
 @font-face {
-  font-family: "Knowledge";
-  src: url('../fonts/knowledge/knowledge-bold.eot?1457063135') format('embedded-opentype'), url('../fonts/knowledge/knowledge-bold.eot?&1457063135#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-bold.woff?1457063018') format('woff'), url('../fonts/knowledge/knowledge-bold.ttf?1457063086') format('truetype'); }
+  font-family: "knowledgeLightRegular";
+  src: url('../fonts/knowledge/knowledge-light-webfont.eot?1457290724') format('embedded-opentype'), url('../fonts/knowledge/knowledge-light-webfont.eot?&1457290724#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-light-webfont.woff?1457290735') format('woff'), url('../fonts/knowledge/knowledge-light-webfont.ttf?1457290734') format('truetype'); }
 @font-face {
-  font-family: "Knowledge";
-  src: url('../fonts/knowledge/knowledge-light.eot?1457063129') format('embedded-opentype'), url('../fonts/knowledge/knowledge-light.eot?&1457063129#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-light.woff?1457063031') format('woff'), url('../fonts/knowledge/knowledge-light.ttf?1457063052') format('truetype'); }
+  font-family: "knowledgeLightItalicRegular";
+  src: url('../fonts/knowledge/knowledge-lightitalic-webfont.eot?1457290738') format('embedded-opentype'), url('../fonts/knowledge/knowledge-lightitalic-webfont.eot?&1457290738#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-lightitalic-webfont.woff?1457290747') format('woff'), url('../fonts/knowledge/knowledge-lightitalic-webfont.ttf?1457290746') format('truetype'); }
+@font-face {
+  font-family: "knowledgeRegularRegular";
+  src: url('../fonts/knowledge/knowledge-regular-webfont.eot?1457290748') format('embedded-opentype'), url('../fonts/knowledge/knowledge-regular-webfont.eot?&1457290748#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-regular-webfont.woff?1457290755') format('woff'), url('../fonts/knowledge/knowledge-regular-webfont.ttf?1457290755') format('truetype'); }
+@font-face {
+  font-family: "knowledgeRegularItalicRegular";
+  src: url('../fonts/knowledge/knowledge-regularitalic-webfont.eot?1457290756') format('embedded-opentype'), url('../fonts/knowledge/knowledge-regularitalic-webfont.eot?&1457290756#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-regularitalic-webfont.woff?1457290763') format('woff'), url('../fonts/knowledge/knowledge-regularitalic-webfont.ttf?1457290762') format('truetype'); }
+@font-face {
+  font-family: "Knowledge-Bold";
+  src: url('../fonts/knowledge/knowledge-bold.eot?1457290665') format('embedded-opentype'), url('../fonts/knowledge/knowledge-bold.eot?&1457290665#iefix') format('embedded-opentype'), url('../fonts/knowledge/knowledge-bold.woff?1457290723') format('woff'), url('../fonts/knowledge/knowledge-bold.ttf?1457290719') format('truetype'); }
 @font-face {
   font-family: "icons";
   src: url("../fonts/fontcustom/icons-365343311b37a9c5f4bc15f35841f40f.eot");
@@ -117,10 +126,9 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  font-family: "Knowledge", "Helvetica Neue", sans-serif;
+  font-family: "knowledgeRegularRegular", "Helvetica Neue", sans-serif;
   font-size: 10px;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'knowledgeRegularRegular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
   html[data-mobile] * {
@@ -157,8 +165,7 @@ html {
   font-size: 4.8rem;
   line-height: 1.05;
   text-transform: uppercase;
-  font-weight: 700;
-  font-style: normal;
+  font-family: 'Knowledge-Bold';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
   .heading > span {
@@ -167,8 +174,7 @@ html {
 .subheading {
   font-size: 4.8rem;
   line-height: 1.5;
-  font-weight: 300;
-  font-style: normal;
+  font-family: 'knowledgeLightRegular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -176,8 +182,7 @@ html {
   font-size: 1.6rem;
   line-height: 1.5;
   text-transform: uppercase;
-  font-weight: 700;
-  font-style: normal;
+  font-family: 'Knowledge-Bold';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -255,8 +260,8 @@ html {
     transform: translateY(0px) rotateZ(0deg); } }
 @-moz-keyframes app-launch {
   0% {
-    -moz-transform: scale(0.2) translateY(100%);
-    transform: scale(0.2) translateY(100%);
+    -moz-transform: scale(0.5) translateY(50%);
+    transform: scale(0.5) translateY(50%);
     opacity: 0; }
   100% {
     -moz-transform: scale(1) translateY(0);
@@ -264,8 +269,8 @@ html {
     opacity: 1; } }
 @-webkit-keyframes app-launch {
   0% {
-    -webkit-transform: scale(0.2) translateY(100%);
-    transform: scale(0.2) translateY(100%);
+    -webkit-transform: scale(0.5) translateY(50%);
+    transform: scale(0.5) translateY(50%);
     opacity: 0; }
   100% {
     -webkit-transform: scale(1) translateY(0);
@@ -273,10 +278,10 @@ html {
     opacity: 1; } }
 @keyframes app-launch {
   0% {
-    -moz-transform: scale(0.2) translateY(100%);
-    -ms-transform: scale(0.2) translateY(100%);
-    -webkit-transform: scale(0.2) translateY(100%);
-    transform: scale(0.2) translateY(100%);
+    -moz-transform: scale(0.5) translateY(50%);
+    -ms-transform: scale(0.5) translateY(50%);
+    -webkit-transform: scale(0.5) translateY(50%);
+    transform: scale(0.5) translateY(50%);
     opacity: 0; }
   100% {
     -moz-transform: scale(1) translateY(0);
@@ -444,6 +449,40 @@ body {
     #main > section#promo article > div {
       display: table-cell;
       vertical-align: middle; }
+    #main > section#promo article .cta {
+      margin-top: 4rem; }
+      #main > section#promo article .cta > a {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 1.40845%; }
+        #main > section#promo article .cta > a.appstore {
+          background-image: url('../images/generated/ui-se205948087.png');
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          height: 51px;
+          width: 150px;
+          overflow: hidden; }
+          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+            #main > section#promo article .cta > a.appstore {
+              background-image: url('../images/generated/ui-2x-se52dda58ec.png');
+              background-size: 150px 104px;
+              background-position: 0 0;
+              height: 51px;
+              width: 150px; } }
+        #main > section#promo article .cta > a.googleplay {
+          background-image: url('../images/generated/ui-se205948087.png');
+          background-position: 0 -55px;
+          background-repeat: no-repeat;
+          height: 51px;
+          width: 150px;
+          overflow: hidden; }
+          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+            #main > section#promo article .cta > a.googleplay {
+              background-image: url('../images/generated/ui-2x-se52dda58ec.png');
+              background-size: 150px 104px;
+              background-position: 0 -53px;
+              height: 51px;
+              width: 150px; } }
   #main > section#promo figure {
     width: 49.29577%;
     float: right;
@@ -463,7 +502,7 @@ body {
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 95%;
+      height: 98%;
       background-image: url('../images/promo-figure.png?1457215093');
       background-position: center bottom;
       background-size: contain;
@@ -487,9 +526,9 @@ body {
           height: 100%;
           background-image: url('../images/promo-app-background.png?1457281134');
           background-size: 100% 100%;
-          -moz-animation: app-launch 0.85s 1.15s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-          -webkit-animation: app-launch 0.85s 1.15s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-          animation: app-launch 0.85s 1.15s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
+          -moz-animation: app-launch 0.75s 1.45s cubic-bezier(0.23, 1, 0.32, 1) both paused;
+          -webkit-animation: app-launch 0.75s 1.45s cubic-bezier(0.23, 1, 0.32, 1) both paused;
+          animation: app-launch 0.75s 1.45s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
         #main > section#promo figure > .background > .screen > .app-sponsor {
           position: absolute;
           top: 0;
@@ -501,9 +540,9 @@ body {
           background-size: 100% auto;
           background-repeat: no-repeat;
           background-position: bottom;
-          -moz-animation: app-sponsor-slide-in 0.85s 1.35s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-          -webkit-animation: app-sponsor-slide-in 0.85s 1.35s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-          animation: app-sponsor-slide-in 0.85s 1.35s cubic-bezier(0.215, 0.61, 0.355, 1) both paused; }
+          -moz-animation: app-sponsor-slide-in 0.75s 1.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
+          -webkit-animation: app-sponsor-slide-in 0.75s 1.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
+          animation: app-sponsor-slide-in 0.75s 1.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused; }
   #main > section#promo .control {
     width: 100%;
     height: 6rem;
@@ -641,8 +680,7 @@ body {
         color: #2a2a2a;
         font-size: 1.8rem;
         line-height: 1.333;
-        font-weight: 400;
-        font-style: italic;
+        font-family: 'knowledgeRegularItalicRegular';
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
 #main > section#realists {
@@ -1017,10 +1055,9 @@ body {
         float: right;
         margin-right: 0; }
       #main > section#appstore .reviews li h3 {
-        font-size: 2.2rem;
-        line-height: 1.3;
-        font-weight: 700;
-        font-style: normal;
+        font-size: 2rem;
+        line-height: 1.15;
+        font-family: 'Knowledge-Bold';
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
       #main > section#appstore .reviews li .stars {
@@ -1088,12 +1125,18 @@ header {
       display: inline-block;
       font-size: 1.6rem;
       text-transform: uppercase;
-      font-weight: 700;
-      font-style: normal;
+      font-family: 'Knowledge-Bold';
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale; }
       header nav li.active {
         color: #ff9100; }
+      header nav li:not(.active) a {
+        -moz-transition: opacity 0.25s;
+        -o-transition: opacity 0.25s;
+        -webkit-transition: opacity 0.25s;
+        transition: opacity 0.25s; }
+        header nav li:not(.active) a:hover {
+          opacity: .25; }
 
 footer {
   margin-top: 3rem;
