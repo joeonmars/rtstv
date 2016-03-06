@@ -165,6 +165,7 @@ html {
   color: #2a2a2a; }
 
 .heading {
+  position: relative;
   font-size: 4.8rem;
   line-height: 1.05;
   text-transform: uppercase;
@@ -173,6 +174,29 @@ html {
   -moz-osx-font-smoothing: grayscale; }
   .heading > span {
     display: block; }
+  .heading:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0.18em;
+    left: -1em;
+    width: 5px;
+    height: calc(100% - 0.36em);
+    background: #ff9100; }
+  .heading:after {
+    content: none;
+    display: block;
+    margin: .4em 0;
+    width: 1em;
+    height: 5px;
+    background: #ff9100; }
+  .heading.no-decoration:before, .heading.no-decoration:after {
+    content: none; }
+  @media (max-width: 1440px) {
+    .heading:before {
+      content: none; }
+    .heading:after {
+      content: ''; } }
 
 .subheading {
   font-size: 4.8rem;
@@ -1069,7 +1093,7 @@ body {
         width: 10.69767%;
         float: left;
         margin-right: 0.46512%; }
-        #main > section#twitter .tweet-scroller .tweets li:nth-child(6n) {
+        #main > section#twitter .tweet-scroller .tweets li:nth-child(9n) {
           float: right;
           margin-right: 0; }
 #main > section#appstore {

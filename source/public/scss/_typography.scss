@@ -3,6 +3,7 @@ html{
 }
 
 .heading{
+	position: relative;
 	font-size: 4.8rem;
 	line-height: 1.05;
 	text-transform: uppercase;
@@ -10,6 +11,41 @@ html{
 
 	>span{
 		display: block;
+	}
+
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0.18em;
+		left: -1em;
+		width: 5px;
+		height: calc(100% - 0.36em);
+		background: $orange;
+	}
+
+	&:after{
+		content: none;
+		display: block;
+		margin: .4em 0;
+		width: 1em;
+		height: 5px;
+		background: $orange;
+	}
+
+	&.no-decoration{
+		&:before, &:after{
+			content: none;
+		}
+	}
+
+	@include breakpoint($break_standard_width) {
+		&:before{
+			content: none;
+		}
+		&:after{
+			content: '';
+		}
 	}
 }
 

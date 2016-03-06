@@ -1,8 +1,5 @@
 // global requires
 global.$ = require( 'jquery' );
-global._ = require( 'underscore' );
-
-require( 'jquery-mousewheel' )( global.$ );
 
 require( 'libs/gsap/TweenMax' );
 require( 'libs/gsap/plugins/ScrollToPlugin' );

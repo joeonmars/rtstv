@@ -493,7 +493,7 @@
 			li{
 				@include span(4 of 36);
 
-				&:nth-child(6n) {
+				&:nth-child(9n) {
 					@include last;
 				}
 			}

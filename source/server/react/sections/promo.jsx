@@ -229,7 +229,7 @@ var Promo = React.createClass( {
 
 				<article>
 					<div>
-						<h1 className='heading' dangerouslySetInnerHTML={{__html: data.heading}}></h1>
+						<h1 className='heading no-decoration' dangerouslySetInnerHTML={{__html: data.heading}}></h1>
 						<div className='body' dangerouslySetInnerHTML={{__html: data.body}}></div>
 						<div className='cta'>
 							<a href='https://itunes.apple.com/us/app/reuters-tv/id944245256' className='appstore'></a>
