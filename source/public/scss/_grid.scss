@@ -1,27 +1,32 @@
 $debug: (
 	debug: (
-		//image: show,
-		//output: overlay
+		image: show,
+		output: overlay
 	)
 );
 
 $susy: (
 	columns: 12,
-	container: 1400px,
+	container: 1320px,
 	gutters: .2,
 	global-box-sizing: border-box,
 );
 
-$grid-no-gutters: (
+$grid-more-gutter: (
 	columns: 12,
-	container: 1400px,
-	gutters: 0,
+	container: 1320px,
+	gutters: .4,
 	global-box-sizing: border-box,
 );
 
 @if compass-env() == 'development' {
 	$susy: map-merge($susy, $debug);
-	$grid-no-gutters: map-merge($grid-no-gutters, $debug);
+	$grid-more-gutter: map-merge($grid-more-gutter, $debug);
 }
 
-$max_grid_width: calc(100% - #{gutter()*2});
+$max_grid_width: calc(100% - #{gutter()*5});
+
+@mixin content-grid() {
+	@include container(12);
+	width: $max_grid_width;
+}

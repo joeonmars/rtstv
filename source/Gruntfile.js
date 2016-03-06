@@ -276,7 +276,7 @@ module.exports = function( grunt ) {
 		'symlink',
 		'compass:development',
 		'webfont',
-		//'clean:react',
+		'clean:react',
 		'react',
 		'browserify',
 		'exorcise:bundle',

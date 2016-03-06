@@ -1,0 +1,17 @@
+*.DS_Store
+*.sublime-workspace
+node_modules
+Gemfile.lock
+.sass-cache
+release/**/*
+**/*/react/**/*.js
+source/public/fonts/fontcustom/*.svg
+source/public/fonts/fontcustom/*.eot
+source/public/fonts/fontcustom/*.ttf
+source/public/fonts/fontcustom/*.woff
+source/public/output/**/*.css
+source/public/output/**/*.js
+source/public/output/**/*.map
+source/public/js/helpers
+
+!*.gitkeep

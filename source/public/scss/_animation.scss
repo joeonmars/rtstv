@@ -1,7 +1,7 @@
 @include keyframes(fade-in-from-bottom) {
   0% {
     opacity: 0;
-    @include translateY(20px);
+    @include translateY(40px);
   }
   100% {
     opacity: 1;
@@ -9,116 +9,35 @@
   }
 }
 
-@include keyframes(pulse) {
-  0% {
-    @include scale(.6);
-    box-shadow: 0 0 0 0 rgba($gold, .5);
-  }
-  70% {
-    @include scale(1);
-    box-shadow: 0 0 0 15px rgba($gold, 0);
-  }
-  100% {
-    @include scale(.6);
-    box-shadow: 0 0 0 0 rgba($gold, 0);
-  }
-}
-
-@include keyframes(liked) {
-  0% {
-    @include scale(.8);
-  }
-  60% {
-    @include scale(1.2);
-  }
-  100% {
-    @include scale(1);
-  }
-}
-
-@include keyframes(gleam) {
-  0% { opacity: 1; } 
-  50% { opacity: .5; } 
-  100% { opacity: 1; }
-}
-
-@include keyframes(bounce) {
-  0%, 20%, 50%, 80%, 100% {
-    @include translateY(0);
-  }
-  40% {
-    @include translateY(-1rem);
-  }
-  60% {
-    @include translateY(-.5rem);
-  }
-}
-
-@include keyframes(shake) {
-  0% {
-    @include translateY(-3px);
-  }
-  50% {
-    @include translateY(3px);
-  }
-  100% {
-    @include translateY(0);
-  }
-}
-
-@include keyframes(letter-drop) {
+@include keyframes(figure-slide-in) {
   0% {
     opacity: 0;
-    @include transform( translateY(-100px) rotateX(-90deg) );
-  }
-  10%{
-    opacity: .5;
-  }
-  20% {
-    opacity: .8;
-    @include transform( translateY(-20px) rotateX(-360deg) );
+    @include transform(translateY(50%) rotateZ(-2deg));
   }
   100% {
     opacity: 1;
-    @include transform( translateY(0) rotateX(360deg) );
+    @include transform(translateY(0px) rotateZ(0deg));
   }
 }
 
-/* Generated with Bounce.js. Edit at http://goo.gl/1xl1zB */
-// animation: pop 1000ms linear both;
-@include keyframes(pop) { 
-  0% { @include transform( matrix3d(0.8, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 1, 0, 0, 48, 0, 1) ); }
-  3.4% { @include transform( matrix3d(0.863, 0, 0, 0, 0, 0.881, 0, 0, 0, 0, 1, 0, 0, 30.971, 0, 1) ); }
-  4.3% { @include transform( matrix3d(0.882, 0, 0, 0, 0, 0.908, 0, 0, 0, 0, 1, 0, 0, 26.463, 0, 1) ); }
-  4.7% { @include transform( matrix3d(0.89, 0, 0, 0, 0, 0.92, 0, 0, 0, 0, 1, 0, 0, 24.485, 0, 1) ); }
-  6.81% { @include transform( matrix3d(0.932, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 14.649, 0, 1) ); }
-  8.61% { @include transform( matrix3d(0.964, 0, 0, 0, 0, 1.019, 0, 0, 0, 0, 1, 0, 0, 7.426, 0, 1) ); }
-  9.41% { @include transform( matrix3d(0.977, 0, 0, 0, 0, 1.034, 0, 0, 0, 0, 1, 0, 0, 4.697, 0, 1) ); }
-  10.21% { @include transform( matrix3d(0.988, 0, 0, 0, 0, 1.045, 0, 0, 0, 0, 1, 0, 0, 2.297, 0, 1) ); }
-  12.91% { @include transform( matrix3d(1.019, 0, 0, 0, 0, 1.066, 0, 0, 0, 0, 1, 0, 0, -3.342, 0, 1) ); }
-  13.61% { @include transform( matrix3d(1.025, 0, 0, 0, 0, 1.066, 0, 0, 0, 0, 1, 0, 0, -4.223, 0, 1) ); }
-  14.11% { @include transform( matrix3d(1.028, 0, 0, 0, 0, 1.066, 0, 0, 0, 0, 1, 0, 0, -4.722, 0, 1) ); }
-  17.22% { @include transform( matrix3d(1.041, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1, 0, 0, -5.882, 0, 1) ); }
-  17.52% { @include transform( matrix3d(1.042, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, -5.858, 0, 1) ); }
-  18.72% { @include transform( matrix3d(1.042, 0, 0, 0, 0, 1.037, 0, 0, 0, 0, 1, 0, 0, -5.602, 0, 1) ); }
-  21.32% { @include transform( matrix3d(1.039, 0, 0, 0, 0, 1.014, 0, 0, 0, 0, 1, 0, 0, -4.495, 0, 1) ); }
-  24.32% { @include transform( matrix3d(1.03, 0, 0, 0, 0, 0.992, 0, 0, 0, 0, 1, 0, 0, -2.941, 0, 1) ); }
-  25.23% { @include transform( matrix3d(1.027, 0, 0, 0, 0, 0.988, 0, 0, 0, 0, 1, 0, 0, -2.5, 0, 1) ); }
-  28.33% { @include transform( matrix3d(1.015, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1, 0, 0, -1.212, 0, 1) ); }
-  29.03% { @include transform( matrix3d(1.013, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, -0.979, 0, 1) ); }
-  29.93% { @include transform( matrix3d(1.01, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1, 0, 0, -0.71, 0, 1) ); }
-  35.54% { @include transform( matrix3d(0.996, 0, 0, 0, 0, 0.992, 0, 0, 0, 0, 1, 0, 0, 0.241, 0, 1) ); }
-  36.74% { @include transform( matrix3d(0.994, 0, 0, 0, 0, 0.996, 0, 0, 0, 0, 1, 0, 0, 0.315, 0, 1) ); }
-  39.44% { @include transform( matrix3d(0.992, 0, 0, 0, 0, 1.002, 0, 0, 0, 0, 1, 0, 0, 0.375, 0, 1) ); }
-  41.04% { @include transform( matrix3d(0.992, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, 0, 0.36, 0, 1) ); }
-  44.44% { @include transform( matrix3d(0.993, 0, 0, 0, 0, 1.006, 0, 0, 0, 0, 1, 0, 0, 0.269, 0, 1) ); }
-  52.15% { @include transform( matrix3d(0.998, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0.048, 0, 1) ); }
-  59.86% { @include transform( matrix3d(1.001, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, -0.023, 0, 1) ); }
-  61.66% { @include transform( matrix3d(1.001, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, -0.025, 0, 1) ); }
-  63.26% { @include transform( matrix3d(1.001, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, -0.024, 0, 1) ); }
-  75.28% { @include transform( matrix3d(1, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, -0.002, 0, 1) ); }
-  83.98% { @include transform( matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.002, 0, 1) ); }
-  85.49% { @include transform( matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.002, 0, 1) ); }
-  90.69% { @include transform( matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.001, 0, 1) ); }
-  100% { @include transform( matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) ); } 
+@include keyframes(app-launch) {
+  0% {
+    @include transform(scale(.2) translateY(100%));
+    opacity: 0;
+  }
+  100% {
+   @include transform(scale(1) translateY(0));
+    opacity: 1;
+  }
+}
+
+@include keyframes(app-sponsor-slide-in) {
+  0% {
+    opacity: 0;
+    @include translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    @include translateY(0);
+  }
 }

@@ -1,21 +1,62 @@
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-bold(){
+    font-weight: 700;
+    font-style: normal;
+    @include font-smoothing;
+}
+
+@mixin font-regular(){
+    font-weight: 400;
+    font-style: normal;
+    @include font-smoothing;
+}
+
+@mixin font-regularitalic(){
+    font-weight: 400;
+    font-style: italic;
+    @include font-smoothing;
+}
+
 @mixin font-light(){
     font-weight: 300;
+    font-style: normal;
+    @include font-smoothing;
 }
 
-@mixin font-book(){
-    font-weight: 400;
-}
+@include font-face(
+    'Knowledge',
+    font-files(
+    	'knowledge/knowledge-regular.eot',
+    	'knowledge/knowledge-regular.eot?#iefix',
+        'knowledge/knowledge-regular.woff',
+        'knowledge/knowledge-regular.ttf'));
 
-@mixin font-medium(){
-    font-weight: 500;
-}
+@include font-face(
+    'Knowledge',
+    font-files(
+    	'knowledge/knowledge-regularitalic.eot',
+    	'knowledge/knowledge-regularitalic.eot?#iefix',
+        'knowledge/knowledge-regularitalic.woff',
+        'knowledge/knowledge-regularitalic.ttf'));
 
-@mixin font-heavy(){
-    font-weight: 700;
-}
+@include font-face(
+    'Knowledge',
+    font-files(
+    	'knowledge/knowledge-bold.eot',
+    	'knowledge/knowledge-bold.eot?#iefix',
+        'knowledge/knowledge-bold.woff',
+        'knowledge/knowledge-bold.ttf'));
 
-@mixin font-extra-bold(){
-    font-weight: 800;
-}
+@include font-face(
+    'Knowledge',
+    font-files(
+    	'knowledge/knowledge-light.eot',
+    	'knowledge/knowledge-light.eot?#iefix',
+        'knowledge/knowledge-light.woff',
+        'knowledge/knowledge-light.ttf'));
 
-$font_system: "futura-pt", sans-serif;
+$font_default: 'Knowledge', 'Helvetica Neue', sans-serif;

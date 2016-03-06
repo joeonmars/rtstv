@@ -1,138 +1,81 @@
-var _ = require('underscore');
 var React = require( 'react' );
-var classnames = require( 'classnames' );
+var classnames = require('classnames');
 
-
-var ga;
-
-
-var navItems = [
+var items = [
 	{
-		text: 'ENTER THE ANDYs NOW',
-		href: 'https://www.andyawards.com/enter-now/',
-		className: 'enter',
-		trackingName: 'header enter now'
+		id: 'about',
+		url: 'https://www.reuters.tv/about',
+		text: 'About'
 	},
 	{
-		text: '',
-		href: 'https://twitter.com/andyawards',
-		className: 'icon icon-twitter',
-		trackingName: 'header twitter'
+		id: 'advertise',
+		url: 'https://www.reuters.tv/advertise',
+		text: 'Advertise'
 	},
 	{
-		text: '',
-		href: 'https://www.facebook.com/pages/The-International-ANDY-Awards/173551691137',
-		className: 'icon icon-facebook',
-		trackingName: 'header facebook'
+		id: 'publishers',
+		url: 'https://www.reuters.tv/publishers',
+		text: 'Publishers'
 	},
 	{
-		text: '',
-		href: 'https://www.linkedin.com/groups/International-ANDY-Awards-1867856/about',
-		className: 'icon icon-linkedin',
-		trackingName: 'header linkedin'
+		id: 'press',
+		url: 'https://www.reuters.tv/press',
+		text: 'Press'
 	},
 	{
-		text: '',
-		href: 'http://instagram.com/andyawards',
-		className: 'icon icon-instagram',
-		trackingName: 'header instagram'
+		id: 'reception',
+		url: 'https://www.reuters.tv/reception',
+		text: 'Reception'
+	},
+	{
+		id: 'careers',
+		url: 'https://www.reuters.tv/careers',
+		text: 'Careers'
 	}
 ];
 
-
 var Header = React.createClass( {displayName: "Header",
 
-	getInitialState: function() {
-
-		return {
-			compact: false
-		};
+	getDefaultProps: function() {
+	    return {
+	    	currentNavId: 'about'
+	    };
 	},
 
-	componentDidMount: function() {
+	renderNavItem: function( item, index ) {
 
-		ga = require( 'react-ga' );
+		var isActive = (item.id === this.props.currentNavId);
 
-		this.$window = $(window);
-		this.breakpointY = 0;
+		var itemClassName = classnames({
+			'active': isActive
+		});
 
-		$(window)
-			.on('scroll', this.onPageScroll)
-			.on('resize', this.resize);
-
-		this.resize();
-	},
-
-	createNavItem: function(item, index) {
+		var itemURL = isActive ? '/' : item.url;
 
 		return (
-			React.createElement("li", {key: index}, 
-				React.createElement("a", {href: item.href, target: "_blank", className: item.className, onClick: this.track.bind(this, item)}, 
-					React.createElement("span", {className: item.className}, item.text), 
-					React.createElement("span", {className: 'after ' + item.className}, item.text)
-				)
+			React.createElement("li", {key: index, className: itemClassName}, 
+				React.createElement("a", {href: itemURL}, item.text)
 			)
 		);
-	},
-
-	track: function(item) {
-
-		ga.event( {
-			category: item.trackingName,
-			action: 'click',
-			nonInteraction: false
-		} );
-	},	
-
-	resize: function() {
-
-		this.breakpointY = this.$window.height() / 2;
-	},
-
-	onPageScroll: function() {
-
-		if( this.$window.scrollTop() > this.breakpointY ) {
-
-			if(!this.state.compact) {
-
-				this.setState({
-					compact: true
-				});
-			}
-
-		}else if( this.state.compact ) {
-
-				this.setState({
-					compact: false
-				});
-		}
 	},
 
 	render: function() {
 
-		var headerClassName = classnames({
-			'compact': this.state.compact
-		});
-
 		return (
-			React.createElement("header", {className: headerClassName}, 
-				
-				React.createElement("a", {className: "logo", href: "https://www.andyawards.com/", target: "_blank"}), 
-				
+			React.createElement("header", null, 
 				React.createElement("div", {className: "inner"}, 
+					React.createElement("a", {className: "logo", href: "/"}, "Reuters TV"), 
 
 					React.createElement("nav", null, 
 						React.createElement("ul", null, 
-						  _.map(navItems, this.createNavItem)
+						items.map(this.renderNavItem)
 						)
 					)
-					
 				)
-
 			)
 		);
 	}
-} );
+});
 
 
 module.exports = Header;

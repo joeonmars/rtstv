@@ -1,0 +1,44 @@
+@import "global";
+@import "grid";
+@import "typography";
+@import "animation";
+@import "ui";
+
+html{
+	overflow-x: auto;
+	overflow-y: scroll;
+
+	&[data-mobile] {
+		@import "mobile";
+	}
+
+	&[data-desktop] {
+		@import "desktop";
+	}
+}
+
+body{
+	background: white;
+	min-width: 320px;
+	min-height: 480px;
+	overflow: hidden;
+
+	.no-scrollbar &{
+		height: 100%;
+		overflow: hidden !important;
+	}
+}
+
+#main{
+	>section{
+		@import "section";
+	}
+}
+
+header{
+	@import "header";
+}
+
+footer{
+	@import "footer";
+}

@@ -2,9 +2,6 @@ var React = require( 'react' );
 var ReactDOM = require( 'react-dom' );
 
 
-var ScrollMonitor;
-
-
 var mixins = {
 
 	getInitialState: function() {
@@ -20,7 +17,7 @@ var mixins = {
 
 	componentDidMount: function() {
 
-		ScrollMonitor = ScrollMonitor || require('scrollmonitor');
+		var ScrollMonitor = require('scrollmonitor');
 		var dom = ReactDOM.findDOMNode(this);
 
 		this.scrollWatcher = ScrollMonitor.create( dom, {
