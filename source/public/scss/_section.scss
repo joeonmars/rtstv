@@ -26,6 +26,14 @@
 	background-repeat: repeat-x;
 	overflow: hidden;
 
+	&:not(.entered-viewport){
+		figure{
+			.background, .app-background, .app-sponsor{
+				display: none;
+			}
+		}
+	}
+
 	>.container{
 		>.inner{
 			@include content-grid;
@@ -67,9 +75,10 @@
 	}
 
 	figure{
-		@include span(6 last);
+		@include span(7 last);
 		height: 100%;
 		position: relative;
+		@include backfaceHidden;
 		@include transform-origin(center, center);
 
 		&.show{
@@ -87,7 +96,7 @@
 			background-size: contain;
 			background-repeat: no-repeat;
 			@include transform-origin(center, bottom);
-			@include animation(figure-slide-in 1s 1s $easeOutCubic both paused);
+			@include animation(figure-slide-in 1s 0.5s $easeOutCubic both paused);
 
 			>.screen{
 				position: absolute;
@@ -98,7 +107,7 @@
 					@include absoluteFullSize;
 					background-image: image-url('promo-app-background.png');
 					background-size: 100% 100%;
-					@include animation(app-launch .75s 1.45s $easeOutQuint both paused);
+					@include animation(app-launch .75s 0.95s $easeOutQuint both paused);
 				}
 
 				>.app-sponsor{
@@ -108,7 +117,7 @@
 					background-size: 100% auto;
 					background-repeat: no-repeat;
 					background-position: bottom;
-					@include animation(app-sponsor-slide-in .75s 1.85s $easeOutCubic both paused);
+					@include animation(app-sponsor-slide-in .75s 0.9s $easeOutCubic both paused);
 				}
 			}
 		}
@@ -120,6 +129,17 @@
 		background: white;
 		border-top: 1px solid $ui_gray;
 		@include box-sizing(border-box);
+		@include translateY(0);
+		@include transition(transform .8s $easeOutCubic);
+
+		&.hide{
+			@include translateY(95%);
+
+			>button{
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
 
 		>button{
 			margin: -3.5em auto;
@@ -127,18 +147,48 @@
 			width: 7em;
 			height: 7em;
 			background: white;
+			@include scale(1);
+			@include transition(transform .35s $easeOutQuint, opacity .25s, visibility .25s);
 			@include border-radius(100%);
 			@include box-shadow(0px 10px 20px 0px rgba(0, 0, 0, 0.09));
 
-			>span{
-				font-size: .8em;
+			>.icon{
+				&.icon-spinner{
+					font-size: 3em;
+					display: none;
+					@include animation(spinning 1s linear infinite);
+				}
+
+				&.icon-scroll-arrow{
+					font-size: .8em;
+					display: block;
+					@include animation(fade-in 2s ease-in-out both);
+				}
+			}
+
+			&:disabled{
+				.icon-spinner{
+					display: block;
+				}
+
+				.icon-scroll-arrow{
+					display: none;
+				}
+			}
+
+			&:active{
+				@include scale(.85);
+
+				>.icon:before{
+					opacity: .5;
+				}
 			}
 		}
 	}
 }
 
 &#news{
-	padding: 16rem 0 18rem 0;
+	padding: 18rem 0;
 
 	>.container{
 		>.inner{

@@ -41,3 +41,17 @@
     @include translateY(0);
   }
 }
+
+@include keyframes(spinning) {
+    0% {
+        @include rotate(0deg);
+    }
+    100% {
+        @include rotate(360deg);
+    }
+}
+
+@include keyframes(fade-in) {
+  0% { opacity: 0; } 
+  100% { opacity: 1; }
+}

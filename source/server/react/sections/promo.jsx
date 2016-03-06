@@ -10,6 +10,8 @@ var Promo = React.createClass( {
 
 	    return {
 	    	showFigure: false,
+	    	loading: false,
+	    	hideControl: false,
 	    	screenMetrics: {
 	    		left: 0,
 	    		bottom: 0,
@@ -19,9 +21,19 @@ var Promo = React.createClass( {
 	    };
 	},
 
+	componentWillMount: function() {
+
+		this.setState({
+			loading: true
+		});
+	},
+
 	componentDidMount: function() {
 
-		$(window).resize( this.resize );
+		$(window)
+			.resize( this.resize )
+			.scroll( this.onPageScroll );
+
 		this.resize();
 
 		// Create a matrix for wiggling the figure
@@ -40,6 +52,13 @@ var Promo = React.createClass( {
 		];
 
 		$.preload( figureAssets ).done( this.showFigure ).fail( this.showFigureFallback );
+
+		// Preload page assets, unlock the page scroll
+		// upon load completion
+		var siteAssets = figureAssets.concat();
+		siteAssets.push( '/images/realists.jpg' );
+
+		$.preload( siteAssets ).done( this.enableScroll ).fail( this.enableScroll );
 	},
 
 	showFigure: function() {
@@ -53,6 +72,29 @@ var Promo = React.createClass( {
 
 		// TODO: Provide a fallback solution
 		console.log("Show figure fallback, because the assets failed to load...");
+	},
+
+	enableScroll: function() {
+
+		this.setState({
+			loading: false
+		});
+	},
+
+	autoScroll: function() {
+
+		var nextSection = $('#main section')[1];
+		var nextSectionScrollTop = $(nextSection).offset().top;
+		var nextSectionHeight = $(nextSection).outerHeight();
+		var toScrollTop = nextSectionScrollTop - (window.innerHeight - nextSectionHeight) / 2;
+
+		TweenMax.to( document.body, 1, {
+			scrollTo: {
+				y: toScrollTop,
+				autoKill: true
+			},
+			ease: Cubic.easeInOut
+		} );
 	},
 
 	resize: function() {
@@ -145,12 +187,29 @@ var Promo = React.createClass( {
 			.getMatrixCSS();
 	},
 
+	onPageScroll: function() {
+
+		var hideControl = ($(window).scrollTop() > 0);
+
+		if(hideControl !== this.state.hideControl) {
+
+			this.setState({
+				hideControl: hideControl
+			});
+		}
+	},
+
 	renderOuter: function() {
 
+		var controlClassName = classnames('control', {
+			'hide': this.state.hideControl
+		});
+
 		return(
-			<div className='control'>
-				<button>
+			<div className={controlClassName}>
+				<button disabled={this.state.loading} onClick={this.autoScroll}>
 					<span className='icon icon-scroll-arrow'></span>
+					<span className='icon icon-spinner'></span>
 				</button>
 			</div>
 		);

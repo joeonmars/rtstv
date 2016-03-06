@@ -5,6 +5,8 @@ global._ = require( 'underscore' );
 require( 'jquery-mousewheel' )( global.$ );
 
 require( 'libs/gsap/TweenMax' );
+require( 'libs/gsap/plugins/ScrollToPlugin' );
+
 require( 'libs/jquery.preload' );
 
 
