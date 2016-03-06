@@ -724,7 +724,10 @@ body {
       float: left;
       margin-right: 2.12766%;
       padding-bottom: 7.04225%; }
-      #main > section#news .testimonials li:nth-child(2n) {
+      #main > section#news .testimonials li:nth-child(odd) {
+        margin-left: 0;
+        clear: both; }
+      #main > section#news .testimonials li:nth-child(even) {
         float: right;
         margin-right: 0; }
       #main > section#news .testimonials li > .logo {
@@ -1169,6 +1172,9 @@ body {
       #main > section#appstore .reviews li:nth-child(3n) {
         float: right;
         margin-right: 0; }
+      #main > section#appstore .reviews li:nth-child(3n+1) {
+        margin-left: 0;
+        clear: both; }
       #main > section#appstore .reviews li h3 {
         font-size: 2rem;
         line-height: 1.15;

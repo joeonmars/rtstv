@@ -207,7 +207,12 @@
 			@include span(4 of 8);
 			padding-bottom: span(1);
 
-			&:nth-child(2n) {
+			&:nth-child(odd) {
+				@include first;
+				clear: both;
+			}
+
+			&:nth-child(even) {
 				@include last;
 			}
 
@@ -528,6 +533,11 @@
 
 				&:nth-child(3n) {
 					@include last;
+				}
+
+				&:nth-child(3n+1) {
+					@include first;
+					clear: both;
 				}
 
 				h3{
