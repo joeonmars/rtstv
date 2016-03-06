@@ -52,11 +52,15 @@ var Layout = React.createClass( {
 				</head>
 
 				<body>
-					<Header currentNavId={this.props.pageId} />
+					<div id='main-header'>
+						<Header currentNavId={this.props.pageId} />
+					</div>
 					
 					{this.props.children}
 
-					<Footer />
+					<div id='main-footer'>
+						<Footer />
+					</div>
 
 					<script src={jsPath}></script>
 				</body>

@@ -52,11 +52,15 @@ var Layout = React.createClass( {displayName: "Layout",
 				), 
 
 				React.createElement("body", null, 
-					React.createElement(Header, {currentNavId: this.props.pageId}), 
+					React.createElement("div", {id: "main-header"}, 
+						React.createElement(Header, {currentNavId: this.props.pageId})
+					), 
 					
 					this.props.children, 
 
-					React.createElement(Footer, null), 
+					React.createElement("div", {id: "main-footer"}, 
+						React.createElement(Footer, null)
+					), 
 
 					React.createElement("script", {src: jsPath})
 				)

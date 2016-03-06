@@ -35,10 +35,18 @@ body{
 	}
 }
 
-header{
-	@import "header";
+#main-header{
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+
+	header{
+		@import "header";
+	}
 }
 
-footer{
-	@import "footer";
+#main-footer{
+	footer{
+		@import "footer";
+	}
 }

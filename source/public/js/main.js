@@ -30,6 +30,11 @@ $( document ).ready( function() {
 	var mainContainer = $( '#main-container' ).get( 0 );
 	ReactDOM.render( mainContent, mainContainer );
 
+	var Header = require( 'views/header' );
+	var header = React.createElement( Header, global.props );
+	var mainHeader = $( '#main-header' ).get( 0 );
+	ReactDOM.render( header, mainHeader );
+
 	// Enable fastclick for mobile 
 	if ( global.mobile ) {
 		var attachFastClick = require( 'fastclick' );

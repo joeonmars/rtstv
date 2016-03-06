@@ -26,11 +26,6 @@ var items = [
 		id: 'reception',
 		url: 'https://www.reuters.tv/reception',
 		text: 'Reception'
-	},
-	{
-		id: 'careers',
-		url: 'https://www.reuters.tv/careers',
-		text: 'Careers'
 	}
 ];
 
@@ -38,13 +33,33 @@ var Header = React.createClass( {displayName: "Header",
 
 	getDefaultProps: function() {
 	    return {
-	    	currentNavId: 'about'
+	    	pageId: 'about'
 	    };
+	},
+
+	getInitialState: function() {
+	    return {
+	    	compact: false
+	    };
+	},
+
+	componentDidMount: function() {
+
+		$(window).scroll( this.onPageScroll );
+	},
+
+	onPageScroll: function() {
+
+		var compact = ($(window).scrollTop() > window.innerHeight * .1);
+
+		this.setState({
+			compact: compact
+		});
 	},
 
 	renderNavItem: function( item, index ) {
 
-		var isActive = (item.id === this.props.currentNavId);
+		var isActive = (item.id === this.props.pageId);
 
 		var itemClassName = classnames({
 			'active': isActive
@@ -61,8 +76,12 @@ var Header = React.createClass( {displayName: "Header",
 
 	render: function() {
 
+		var headerClassName = classnames({
+			'compact': this.state.compact
+		});
+
 		return (
-			React.createElement("header", null, 
+			React.createElement("header", {className: headerClassName}, 
 				React.createElement("div", {className: "inner"}, 
 					React.createElement("a", {className: "logo", href: "/"}, "Reuters TV"), 
 

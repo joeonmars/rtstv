@@ -10,7 +10,7 @@ var Index = React.createClass( {
 	render: function() {
 		return (
 			<Layout
-				pageId={'reception'}
+				pageId={this.props.pageId}
 				cmsData={this.props.cmsData}
 				mobile={this.props.mobile}
 				phone={this.props.phone}

@@ -103,7 +103,8 @@ function getCMSData() {
 exports.index = function( req, res ) {
 
 	var props = {
-		cmsData: getCMSData()
+		cmsData: getCMSData(),
+		pageId: 'reception'
 	};
 
 	var isSpider = spiderDetector.isSpider( req.headers[ 'user-agent' ] );

@@ -454,7 +454,7 @@ body {
       #main > section#promo article .cta > a {
         display: inline-block;
         vertical-align: top;
-        margin-right: 1.40845%; }
+        margin: 0 1.40845% 1.40845% 0; }
         #main > section#promo article .cta > a.appstore {
           background-image: url('../images/generated/ui-se205948087.png');
           background-position: 0 0;
@@ -1070,88 +1070,114 @@ body {
         font-size: 1.8rem;
         line-height: 1.333; }
 
-header {
+#main-header {
   position: fixed;
-  z-index: 1;
   width: 100%;
-  padding: 5.3rem 0;
-  background: white;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-  header > .inner {
-    height: 100%;
-    max-width: 1320px;
-    margin-left: auto;
-    margin-right: auto;
-    width: calc(100% - 7.04225%); }
-    header > .inner:after {
-      content: " ";
-      display: block;
-      clear: both; }
-    head:hover ~ header > .inner, head:hover ~ body header > .inner {
-      position: relative; }
-      head:hover ~ header > .inner:before, head:hover ~ body header > .inner:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+  z-index: 1; }
+  #main-header header {
+    width: 100%;
+    padding: 5rem 0;
+    background: rgba(255, 255, 255, 0.97);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    -o-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    #main-header header > .inner {
+      height: 100%;
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto;
+      width: calc(100% - 7.04225%); }
+      #main-header header > .inner:after {
         content: " ";
-        z-index: 998;
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSI4My4zMzMzMyUiIHN0b3AtY29sb3I9IiNiM2IzZmYiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPjxzdG9wIG9mZnNldD0iODMuMzMzMzMlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-        background-size: 100%;
-        background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(102, 102, 255, 0.25)), color-stop(83.33333%, rgba(179, 179, 255, 0.25)), color-stop(83.33333%, rgba(0, 0, 0, 0)));
-        background-image: -moz-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 83.33333%, rgba(0, 0, 0, 0) 83.33333%);
-        background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 83.33333%, rgba(0, 0, 0, 0) 83.33333%);
-        background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 83.33333%, rgba(0, 0, 0, 0) 83.33333%);
-        background-size: 8.4507%;
-        background-origin: content-box;
-        background-clip: content-box;
-        background-position: left top; }
-  header .logo {
-    float: left;
-    width: 22.5em;
-    height: 5.4em;
-    color: transparent;
-    background-image: url('../images/reuters-logo.svg?1457207613');
-    background-size: auto 100%;
-    background-repeat: no-repeat; }
-  header nav {
-    float: right;
-    line-height: 5.4em; }
-    header nav li {
-      margin-left: 1.2em;
-      display: inline-block;
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      font-family: 'Knowledge-Bold';
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
-      header nav li.active {
-        color: #ff9100; }
-      header nav li:not(.active) a {
-        -moz-transition: opacity 0.25s;
-        -o-transition: opacity 0.25s;
-        -webkit-transition: opacity 0.25s;
-        transition: opacity 0.25s; }
-        header nav li:not(.active) a:hover {
-          opacity: .25; }
+        display: block;
+        clear: both; }
+      head:hover ~ #main-header header > .inner, head:hover ~ body #main-header header > .inner {
+        position: relative; }
+        head:hover ~ #main-header header > .inner:before, head:hover ~ body #main-header header > .inner:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          content: " ";
+          z-index: 998;
+          background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSI4My4zMzMzMyUiIHN0b3AtY29sb3I9IiNiM2IzZmYiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPjxzdG9wIG9mZnNldD0iODMuMzMzMzMlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+          background-size: 100%;
+          background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(102, 102, 255, 0.25)), color-stop(83.33333%, rgba(179, 179, 255, 0.25)), color-stop(83.33333%, rgba(0, 0, 0, 0)));
+          background-image: -moz-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 83.33333%, rgba(0, 0, 0, 0) 83.33333%);
+          background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 83.33333%, rgba(0, 0, 0, 0) 83.33333%);
+          background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 83.33333%, rgba(0, 0, 0, 0) 83.33333%);
+          background-size: 8.4507%;
+          background-origin: content-box;
+          background-clip: content-box;
+          background-position: left top; }
+    #main-header header .logo {
+      float: left;
+      width: 22.265em;
+      height: 5.4em;
+      color: transparent;
+      background-image: url('../images/reuters-logo.svg?1457207613');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: left center; }
+    #main-header header nav {
+      float: right;
+      line-height: 5.4em; }
+      #main-header header nav li {
+        margin-left: 1.2em;
+        display: inline-block;
+        font-size: 1.6em;
+        text-transform: uppercase;
+        font-family: 'Knowledge-Bold';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+        #main-header header nav li.active {
+          color: #ff9100; }
+        #main-header header nav li:not(.active) a {
+          -moz-transition: opacity 0.2s;
+          -o-transition: opacity 0.2s;
+          -webkit-transition: opacity 0.2s;
+          transition: opacity 0.2s; }
+          #main-header header nav li:not(.active) a:hover {
+            opacity: .25; }
+        #main-header header nav li:first-child {
+          margin-left: 0; }
+    #main-header header.compact {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #dedfe0;
+      font-size: .85rem; }
+    @media (min-width: 680px) and (max-width: 1200px) {
+      #main-header header {
+        padding: 3rem 0;
+        font-size: .85rem; } }
+    @media (max-width: 680px) {
+      #main-header header {
+        padding: 2rem 0 !important;
+        font-size: .75rem !important; }
+        #main-header header .logo {
+          width: 4em;
+          background-size: auto 70%; }
+        #main-header header nav li {
+          margin-left: 0.6em; } }
 
-footer {
+#main-footer footer {
   margin-top: 3rem;
   max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
   width: calc(100% - 7.04225%);
   text-align: center; }
-  footer:after {
+  #main-footer footer:after {
     content: " ";
     display: block;
     clear: both; }
-  head:hover ~ footer, head:hover ~ body footer {
+  head:hover ~ #main-footer footer, head:hover ~ body #main-footer footer {
     position: relative; }
-    head:hover ~ footer:before, head:hover ~ body footer:before {
+    head:hover ~ #main-footer footer:before, head:hover ~ body #main-footer footer:before {
       position: absolute;
       top: 0;
       left: 0;
@@ -1169,31 +1195,31 @@ footer {
       background-origin: content-box;
       background-clip: content-box;
       background-position: left top; }
-  footer .statement p {
+  #main-footer footer .statement p {
     font-size: 1.4rem;
     line-height: 1.4;
     color: #aeaeae;
     margin: 10px 0; }
-  footer .copyright p, footer .copyright nav {
+  #main-footer footer .copyright p, #main-footer footer .copyright nav {
     display: inline-block;
     font-size: 1.4rem;
     color: #aeaeae; }
-  footer .copyright a {
+  #main-footer footer .copyright a {
     text-decoration: underline;
     margin: 0 5px; }
-    footer .copyright a:hover {
+    #main-footer footer .copyright a:hover {
       text-decoration: none; }
-  footer .social {
+  #main-footer footer .social {
     padding: 45px 0; }
-    footer .social h6 {
+    #main-footer footer .social h6 {
       font-size: 1.6rem;
       color: #aeaeae;
       margin-bottom: 15px; }
-    footer .social ul li {
+    #main-footer footer .social ul li {
       display: inline-block;
       vertical-align: top;
       margin: 0 5px; }
-      footer .social ul li a {
+      #main-footer footer .social ul li a {
         display: block;
         width: 4rem;
         height: 4rem;
@@ -1207,19 +1233,19 @@ footer {
         -o-transition: background 0.25s ease-out;
         -webkit-transition: background 0.25s ease-out;
         transition: background 0.25s ease-out; }
-        footer .social ul li a:hover {
+        #main-footer footer .social ul li a:hover {
           background: #ff9100; }
-          footer .social ul li a:hover .icon-container {
+          #main-footer footer .social ul li a:hover .icon-container {
             -moz-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%); }
-        footer .social ul li a .icon {
+        #main-footer footer .social ul li a .icon {
           display: block;
           color: white;
           font-size: 2.2rem;
           line-height: 4rem; }
-        footer .social ul li a .icon-container {
+        #main-footer footer .social ul li a .icon-container {
           -moz-transform: translateY(0);
           -ms-transform: translateY(0);
           -webkit-transform: translateY(0);

@@ -40024,6 +40024,11 @@ $( document ).ready( function() {
 	var mainContainer = $( '#main-container' ).get( 0 );
 	ReactDOM.render( mainContent, mainContainer );
 
+	var Header = require( 'views/header' );
+	var header = React.createElement( Header, global.props );
+	var mainHeader = $( '#main-header' ).get( 0 );
+	ReactDOM.render( header, mainHeader );
+
 	// Enable fastclick for mobile 
 	if ( global.mobile ) {
 		var attachFastClick = require( 'fastclick' );
@@ -40032,7 +40037,108 @@ $( document ).ready( function() {
 } );
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"fastclick":6,"jquery":9,"jquery-mousewheel":8,"libs/gsap/TweenMax":169,"libs/jquery.preload":170,"react":166,"react-dom":10,"underscore":168,"views/maincontent":172}],172:[function(require,module,exports){
+},{"fastclick":6,"jquery":9,"jquery-mousewheel":8,"libs/gsap/TweenMax":169,"libs/jquery.preload":170,"react":166,"react-dom":10,"underscore":168,"views/header":172,"views/maincontent":173}],172:[function(require,module,exports){
+var React = require( 'react' );
+var classnames = require('classnames');
+
+var items = [
+	{
+		id: 'about',
+		url: 'https://www.reuters.tv/about',
+		text: 'About'
+	},
+	{
+		id: 'advertise',
+		url: 'https://www.reuters.tv/advertise',
+		text: 'Advertise'
+	},
+	{
+		id: 'publishers',
+		url: 'https://www.reuters.tv/publishers',
+		text: 'Publishers'
+	},
+	{
+		id: 'press',
+		url: 'https://www.reuters.tv/press',
+		text: 'Press'
+	},
+	{
+		id: 'reception',
+		url: 'https://www.reuters.tv/reception',
+		text: 'Reception'
+	}
+];
+
+var Header = React.createClass( {displayName: "Header",
+
+	getDefaultProps: function() {
+	    return {
+	    	pageId: 'about'
+	    };
+	},
+
+	getInitialState: function() {
+	    return {
+	    	compact: false
+	    };
+	},
+
+	componentDidMount: function() {
+
+		$(window).scroll( this.onPageScroll );
+	},
+
+	onPageScroll: function() {
+
+		var compact = ($(window).scrollTop() > window.innerHeight * .1);
+
+		this.setState({
+			compact: compact
+		});
+	},
+
+	renderNavItem: function( item, index ) {
+
+		var isActive = (item.id === this.props.pageId);
+
+		var itemClassName = classnames({
+			'active': isActive
+		});
+
+		var itemURL = isActive ? '/' : item.url;
+
+		return (
+			React.createElement("li", {key: index, className: itemClassName}, 
+				React.createElement("a", {href: itemURL}, item.text)
+			)
+		);
+	},
+
+	render: function() {
+
+		var headerClassName = classnames({
+			'compact': this.state.compact
+		});
+
+		return (
+			React.createElement("header", {className: headerClassName}, 
+				React.createElement("div", {className: "inner"}, 
+					React.createElement("a", {className: "logo", href: "/"}, "Reuters TV"), 
+
+					React.createElement("nav", null, 
+						React.createElement("ul", null, 
+						items.map(this.renderNavItem)
+						)
+					)
+				)
+			)
+		);
+	}
+});
+
+
+module.exports = Header;
+},{"classnames":1,"react":166}],173:[function(require,module,exports){
 var _ = require('underscore');
 var React = require( 'react' );
 var PromoSection = require('./sections/promo');
@@ -40081,7 +40187,7 @@ var MainContent = React.createClass( {displayName: "MainContent",
 } );
 
 module.exports = MainContent;
-},{"./sections/appstore":173,"./sections/news":175,"./sections/promo":176,"./sections/realists":177,"./sections/twitter":178,"react":166,"underscore":168}],173:[function(require,module,exports){
+},{"./sections/appstore":174,"./sections/news":176,"./sections/promo":177,"./sections/realists":178,"./sections/twitter":179,"react":166,"underscore":168}],174:[function(require,module,exports){
 var React = require( 'react' );
 var BaseSection = require('./base');
 var _ = require('underscore');
@@ -40133,7 +40239,7 @@ var AppStore = React.createClass( {displayName: "AppStore",
 
 
 module.exports = AppStore;
-},{"./base":174,"react":166,"underscore":168}],174:[function(require,module,exports){
+},{"./base":175,"react":166,"underscore":168}],175:[function(require,module,exports){
 var React = require( 'react' );
 var ReactDOM = require( 'react-dom' );
 var classnames = require( 'classnames' );
@@ -40237,7 +40343,7 @@ var BaseSection = React.createClass( {displayName: "BaseSection",
 
 
 module.exports = BaseSection;
-},{"classnames":1,"react":166,"react-dom":10,"scrollmonitor":167}],175:[function(require,module,exports){
+},{"classnames":1,"react":166,"react-dom":10,"scrollmonitor":167}],176:[function(require,module,exports){
 var React = require( 'react' );
 var BaseSection = require('./base');
 var classnames = require('classnames');
@@ -40282,7 +40388,7 @@ var News = React.createClass( {displayName: "News",
 
 
 module.exports = News;
-},{"./base":174,"classnames":1,"react":166}],176:[function(require,module,exports){
+},{"./base":175,"classnames":1,"react":166}],177:[function(require,module,exports){
 (function (global){
 var React = require( 'react' );
 var ReactDOM = require( 'react-dom' );
@@ -40483,7 +40589,7 @@ var Promo = React.createClass( {displayName: "Promo",
 module.exports = Promo;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./base":174,"classnames":1,"css-to-matrix":2,"react":166,"react-dom":10}],177:[function(require,module,exports){
+},{"./base":175,"classnames":1,"css-to-matrix":2,"react":166,"react-dom":10}],178:[function(require,module,exports){
 (function (global){
 var React = require( 'react' );
 var BaseSection = require('./base');
@@ -40584,7 +40690,7 @@ var Realists = React.createClass( {displayName: "Realists",
 module.exports = Realists;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./base":174,"css-to-matrix":2,"react":166}],178:[function(require,module,exports){
+},{"./base":175,"css-to-matrix":2,"react":166}],179:[function(require,module,exports){
 var React = require( 'react' );
 var BaseSection = require('./base');
 var _ = require('underscore');
@@ -40701,7 +40807,7 @@ var Twitter = React.createClass( {displayName: "Twitter",
 
 
 module.exports = Twitter;
-},{"../tweetembed":179,"./base":174,"classnames":1,"react":166,"underscore":168}],179:[function(require,module,exports){
+},{"../tweetembed":180,"./base":175,"classnames":1,"react":166,"underscore":168}],180:[function(require,module,exports){
 var React = require( 'react' );
 var _ = require('underscore');
 
