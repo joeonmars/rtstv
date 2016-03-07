@@ -24,6 +24,7 @@ A try on the Reuters TV webpage, to demonstrate my coding skills and workflow fo
 
 ## Design changes
 * Moderately tweaked the overall typography.
+* Added application download CTA buttons (based on Apple and Google Style Guide) to the promo section.
 * Replaced the "Realists" section background from the PSD. Know that was a marketing piece, I want the background to look significantly darker. That is to make sure users can read text that is presented over the image.
 * The Tweet embeds look different from the PSD. Because I didn't want to mess up with hacking the iframe styles.
 * Animations in various places, as you would easily notice.
