@@ -166,7 +166,7 @@ html {
 
 .heading {
   position: relative;
-  font-size: 4.8rem;
+  font-size: 4.8em;
   line-height: 1.05;
   text-transform: uppercase;
   font-family: 'Knowledge-Bold';
@@ -192,36 +192,47 @@ html {
     background: #ff9100; }
   .heading.no-decoration:before, .heading.no-decoration:after {
     content: none; }
-  @media (max-width: 1440px) {
+  @media (max-width: 1600px) {
     .heading:before {
       content: none; }
     .heading:after {
       content: ''; } }
+  @media (max-width: 700px) {
+    .heading {
+      text-align: center; }
+      .heading:after {
+        margin-left: auto;
+        margin-right: auto; } }
 
 .subheading {
-  font-size: 4.8rem;
-  line-height: 1.5;
+  margin-top: .25em;
+  font-size: 4.8em;
+  line-height: 1.15;
   font-family: 'knowledgeLightRegular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 .label {
   font-size: 1.6rem;
-  line-height: 1.5;
+  line-height: 1.15;
   text-transform: uppercase;
   font-family: 'Knowledge-Bold';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 .body {
-  font-size: 2.2rem;
+  font-size: 2.2em;
   line-height: 1.36;
   color: #86888b; }
   .body.small {
-    font-size: 1.4rem;
+    font-size: 1.4em;
     line-height: 1.857; }
   .body > p {
     margin-top: 1em; }
+  @media (max-width: 700px) {
+    .body {
+      font-size: 1.4rem !important;
+      line-height: 1.36 !important; } }
 
 @-moz-keyframes fade-in-from-bottom {
   0% {
@@ -418,12 +429,6 @@ button {
 html {
   overflow-x: auto;
   overflow-y: scroll; }
-  html[data-mobile] {
-    font-size: 6px; }
-  html[data-desktop] #promo {
-    min-height: 700px; }
-  html[data-desktop] #realists {
-    min-height: 700px; }
 
 body {
   background: white;
@@ -449,19 +454,25 @@ body {
     #main > section > .container > .outer {
       position: absolute;
       z-index: 1; }
+  @media (max-width: 700px) {
+    #main > section {
+      font-size: .7rem; } }
 #main > section#promo {
   height: 100vh;
-  padding-top: 16rem;
+  padding-top: 16em;
   background-image: url('../images/promo-shadow.png?1457212197');
   background-repeat: repeat-x;
-  overflow: hidden; }
+  overflow: hidden;
+  /** ABOVE PHONE LAYOUT **/
+  /** MOBILE LAYOUT **/ }
   #main > section#promo:not(.entered-viewport) figure .background, #main > section#promo:not(.entered-viewport) figure .app-background, #main > section#promo:not(.entered-viewport) figure .app-sponsor {
     display: none; }
   #main > section#promo > .container > .inner {
     max-width: 1320px;
     margin-left: auto;
     margin-right: auto;
-    width: calc(100% - 7.04225%); }
+    width: calc(100% - 7.04225%);
+    overflow: hidden; }
     #main > section#promo > .container > .inner:after {
       content: " ";
       display: block;
@@ -519,7 +530,7 @@ body {
       display: table-cell;
       vertical-align: middle; }
     #main > section#promo article .cta {
-      margin-top: 4rem; }
+      margin-top: 4em; }
       #main > section#promo article .cta > a {
         display: inline-block;
         vertical-align: top;
@@ -680,8 +691,39 @@ body {
         transform: scale(0.85, 0.85); }
         #main > section#promo .control > button:active > .icon:before {
           opacity: .5; }
+  @media (min-width: 700px) {
+    #main > section#promo {
+      min-height: 700px; } }
+  @media (max-width: 700px) {
+    #main > section#promo {
+      height: auto; }
+      #main > section#promo article {
+        width: 90%;
+        float: left;
+        margin-right: 1.40845%;
+        margin-left: 5%;
+        height: auto;
+        text-align: center; }
+        #main > section#promo article .cta {
+          display: none; }
+      #main > section#promo figure {
+        clear: both;
+        width: 100%;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+        height: 0;
+        padding-bottom: 100%;
+        margin-top: 7.04225%; }
+        #main > section#promo figure > .background {
+          height: 100%; }
+      #main > section#promo > .container .inner {
+        border-bottom: 1px solid #dedfe0; }
+      #main > section#promo > .container .outer {
+        display: none; } }
 #main > section#news {
-  padding: 18rem 0; }
+  padding: 18em 0;
+  /** MOBILE LAYOUT **/ }
   #main > section#news > .container > .inner {
     max-width: 1320px;
     margin-left: auto;
@@ -731,78 +773,63 @@ body {
         float: right;
         margin-right: 0; }
       #main > section#news .testimonials li > .logo {
+        width: 21.73913%;
         float: left;
+        margin-right: 4.34783%;
+        height: 0;
+        padding-bottom: 21.73913%;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        background-size: 100% 100%; }
         #main > section#news .testimonials li > .logo:not(.cultofmac) {
           border: 1px solid #dedfe0; }
         #main > section#news .testimonials li > .logo.adweek {
-          background-image: url('../images/generated/icons-s01b9853a10.png');
-          background-position: 0 0;
-          background-repeat: no-repeat;
-          height: 80px;
-          width: 80px;
-          overflow: hidden; }
-          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-            #main > section#news .testimonials li > .logo.adweek {
-              background-image: url('../images/generated/icons-2x-sa32f036521.png');
-              background-size: 80px 326px;
-              background-position: 0 0;
-              height: 80px;
-              width: 80px; } }
+          background-image: url('../images/logo/adweek.png?1457221415'); }
         #main > section#news .testimonials li > .logo.cultofmac {
-          background-image: url('../images/generated/icons-s01b9853a10.png');
-          background-position: 0 -84px;
-          background-repeat: no-repeat;
-          height: 80px;
-          width: 80px;
-          overflow: hidden; }
-          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-            #main > section#news .testimonials li > .logo.cultofmac {
-              background-image: url('../images/generated/icons-2x-sa32f036521.png');
-              background-size: 80px 326px;
-              background-position: 0 -82px;
-              height: 80px;
-              width: 80px; } }
+          background-image: url('../images/logo/cultofmac.png?1457221336'); }
         #main > section#news .testimonials li > .logo.fastcompany {
-          background-image: url('../images/generated/icons-s01b9853a10.png');
-          background-position: 0 -252px;
-          background-repeat: no-repeat;
-          height: 80px;
-          width: 80px;
-          overflow: hidden; }
-          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-            #main > section#news .testimonials li > .logo.fastcompany {
-              background-image: url('../images/generated/icons-2x-sa32f036521.png');
-              background-size: 80px 326px;
-              background-position: 0 -246px;
-              height: 80px;
-              width: 80px; } }
+          background-image: url('../images/logo/fastcompany.png?1457221521'); }
         #main > section#news .testimonials li > .logo.digitaltrends {
-          background-image: url('../images/generated/icons-s01b9853a10.png');
-          background-position: 0 -168px;
-          background-repeat: no-repeat;
-          height: 80px;
-          width: 80px;
-          overflow: hidden; }
-          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-            #main > section#news .testimonials li > .logo.digitaltrends {
-              background-image: url('../images/generated/icons-2x-sa32f036521.png');
-              background-size: 80px 326px;
-              background-position: 0 -164px;
-              height: 80px;
-              width: 80px; } }
+          background-image: url('../images/logo/digitaltrends.png?1457221601'); }
       #main > section#news .testimonials li > p {
-        padding: 0 1em 0 6em;
+        width: 73.91304%;
+        float: right;
+        margin-right: 0;
         color: #2a2a2a;
-        font-size: 1.8rem;
+        font-size: 1.8em;
         line-height: 1.333;
         font-family: 'knowledgeRegularItalicRegular';
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
+  @media (max-width: 700px) {
+    #main > section#news {
+      padding: 15em 0; }
+      #main > section#news article {
+        width: 90%;
+        float: left;
+        margin-right: 1.40845%;
+        margin-left: 5%;
+        text-align: center; }
+      #main > section#news .testimonials {
+        clear: both;
+        width: 100%;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 15.49296%; }
+        #main > section#news .testimonials li {
+          clear: both;
+          width: 100%;
+          float: left;
+          margin-left: 0;
+          margin-right: 0; }
+          #main > section#news .testimonials li > p {
+            font-size: 2em; } }
 #main > section#realists {
-  height: 90vh; }
+  height: 90vh;
+  /** ABOVE PHONE LAYOUT **/
+  /** MOBILE LAYOUT **/ }
   #main > section#realists > .container > .inner {
     max-width: 1320px;
     margin-left: auto;
@@ -863,7 +890,7 @@ body {
     #main > section#realists article .qualities ul {
       padding-left: 1.6em; }
     #main > section#realists article .qualities li {
-      font-size: 1.6em;
+      font-size: 1.8em;
       margin: .8em 0;
       list-style-type: disc;
       color: #ff9100; }
@@ -883,12 +910,36 @@ body {
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.4); }
+  @media (min-width: 700px) {
+    #main > section#realists {
+      min-height: 700px; } }
+  @media (max-width: 700px) {
+    #main > section#realists {
+      height: auto; }
+      #main > section#realists > .container {
+        padding: 15em 0;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
+      #main > section#realists article {
+        width: 90%;
+        float: left;
+        margin-right: 1.40845%;
+        margin-left: 5%;
+        text-align: center; }
+        #main > section#realists article .qualities ul {
+          padding-left: 0; }
+          #main > section#realists article .qualities ul > li {
+            list-style-type: none; } }
 #main > section#twitter {
-  padding: 19rem 0 4rem 0;
+  padding: 19em 0 4em 0;
   border-bottom: 1px solid #dedfe0;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  /** ABOVE PHONE LAYOUT **/
+  /** NARROW DESKTOP LAYOUT **/
+  /** MOBILE LAYOUT **/ }
   #main > section#twitter article {
     max-width: 1320px;
     margin-left: auto;
@@ -1032,15 +1083,13 @@ body {
         background-image: linear-gradient(to left, #ffffff 30%, rgba(0, 0, 0, 0)); }
     #main > section#twitter .tweet-container .thumbs {
       position: absolute;
-      bottom: 10px;
-      left: 50%;
-      -moz-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%); }
+      bottom: 0;
+      left: 5%;
+      width: 90%;
+      text-align: center; }
       #main > section#twitter .tweet-container .thumbs li {
         display: inline-block;
-        margin: 0 8px; }
+        margin: 4px 8px; }
         #main > section#twitter .tweet-container .thumbs li > button {
           width: 8px;
           height: 8px;
@@ -1089,9 +1138,13 @@ body {
     #main > section#twitter .tweet-scroller .tweets {
       position: relative;
       z-index: 0;
-      width: 302.8169%;
       padding: 7.04225% 0;
       overflow: hidden; }
+      #main > section#twitter .tweet-scroller .tweets iframe {
+        margin: 0 auto; }
+  @media (min-width: 700px) {
+    #main > section#twitter .tweet-scroller .tweets {
+      width: 302.8169%; }
       #main > section#twitter .tweet-scroller .tweets li {
         width: 10.69767%;
         float: left;
@@ -1099,8 +1152,32 @@ body {
         #main > section#twitter .tweet-scroller .tweets li:nth-child(9n) {
           float: right;
           margin-right: 0; }
+        #main > section#twitter .tweet-scroller .tweets li:nth-child(9n+1) {
+          margin-left: 0;
+          clear: both; } }
+  @media (max-width: 1600px) {
+    #main > section#twitter .tweet-container .gradient {
+      display: none; } }
+  @media (max-width: 700px) {
+    #main > section#twitter {
+      padding: 15em 0; }
+      #main > section#twitter article {
+        text-align: center; }
+      #main > section#twitter .tweet-container .prev, #main > section#twitter .tweet-container .next {
+        display: none; }
+      #main > section#twitter .tweet-scroller .tweets {
+        width: 1823.94366%;
+        padding-bottom: 15.49296%; }
+        #main > section#twitter .tweet-scroller .tweets li {
+          width: 5.48263%;
+          float: left;
+          margin-right: 0.07722%; }
+          #main > section#twitter .tweet-scroller .tweets li:last-child {
+            float: right;
+            margin-right: 0; } }
 #main > section#appstore {
-  padding-top: 15rem; }
+  padding-top: 15em;
+  /** MOBILE LAYOUT **/ }
   #main > section#appstore > .container > .inner {
     padding-bottom: 7rem;
     border-bottom: 1px solid #dedfe0;
@@ -1135,11 +1212,17 @@ body {
         background-origin: content-box;
         background-clip: content-box;
         background-position: left top; }
+  #main > section#appstore article {
+    clear: both;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 7.04225%; }
   #main > section#appstore .reviews {
     max-width: 1320px;
     margin-left: auto;
-    margin-right: auto;
-    padding-top: 6.09756%; }
+    margin-right: auto; }
     #main > section#appstore .reviews:after {
       content: " ";
       display: block;
@@ -1176,7 +1259,7 @@ body {
         margin-left: 0;
         clear: both; }
       #main > section#appstore .reviews li h3 {
-        font-size: 2rem;
+        font-size: 2em;
         line-height: 1.15;
         font-family: 'Knowledge-Bold';
         -webkit-font-smoothing: antialiased;
@@ -1188,8 +1271,33 @@ body {
           color: #ff9100;
           margin-right: 2px; }
       #main > section#appstore .reviews li p {
-        font-size: 1.8rem;
+        font-size: 1.8em;
         line-height: 1.333; }
+  @media (max-width: 700px) {
+    #main > section#appstore article {
+      width: 90%;
+      float: left;
+      margin-right: 1.40845%;
+      margin-left: 5%;
+      text-align: center; }
+    #main > section#appstore .reviews {
+      clear: both;
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0; }
+      #main > section#appstore .reviews li {
+        clear: both;
+        width: 100%;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 15.49296% 0 0 0;
+        text-align: center; }
+        #main > section#appstore .reviews li h3 {
+          font-size: 2.4em; }
+        #main > section#appstore .reviews li p {
+          font-size: 2em; } }
 
 #main-header {
   position: fixed;
@@ -1201,11 +1309,7 @@ body {
     background: rgba(255, 255, 255, 0.97);
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -moz-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    -o-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    -webkit-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    box-sizing: border-box; }
     #main-header header > .inner {
       height: 100%;
       max-width: 1320px;
@@ -1271,14 +1375,23 @@ body {
       padding: 1.5rem 0;
       border-bottom: 1px solid #dedfe0;
       font-size: .85rem; }
-    @media (min-width: 680px) and (max-width: 1200px) {
+    @media (min-width: 700px) {
+      #main-header header {
+        -moz-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -o-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1); } }
+    @media (min-width: 700px) and (max-width: 1200px) {
       #main-header header {
         padding: 3rem 0;
         font-size: .85rem; } }
-    @media (max-width: 680px) {
+    @media (max-width: 700px) {
       #main-header header {
-        padding: 2rem 0 !important;
-        font-size: .75rem !important; }
+        padding: 2rem 0;
+        font-size: .75rem; }
+        #main-header header.compact {
+          padding: 1rem 0;
+          font-size: .65rem; }
         #main-header header .logo {
           width: 4em;
           background-size: auto 70%; }

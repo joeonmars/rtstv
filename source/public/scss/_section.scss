@@ -17,11 +17,15 @@
 			z-index: 1;
 		}
 	}
+
+	@include breakpoint($break_phone) {
+		font-size: .7rem;
+	}
 }
 
 &#promo{
 	height: 100vh;
-	padding-top: 16rem;
+	padding-top: 16em;
 	background-image: image-url('promo-shadow.png');
 	background-repeat: repeat-x;
 	overflow: hidden;
@@ -37,6 +41,7 @@
 	>.container{
 		>.inner{
 			@include content-grid;
+			overflow: hidden;
 		}
 
 		>.outer{
@@ -56,7 +61,7 @@
 		}
 
 		.cta{
-			margin-top: 4rem;
+			margin-top: 4em;
 
 			>a{
 				display: inline-block;
@@ -185,10 +190,52 @@
 			}
 		}
 	}
+
+	/** ABOVE PHONE LAYOUT **/
+	@include breakpoint($break_above_phone) {
+		min-height: 700px;
+	}
+
+	/** MOBILE LAYOUT **/
+	@include breakpoint($break_phone) {
+		height: auto;
+
+		article{
+			@include span(90%);
+			@include push(5%);
+			height: auto;
+			text-align: center;
+
+			.cta{
+				display: none;
+			}
+		}
+
+		figure{
+			@include full;
+			height: 0;
+			padding-bottom: span(12);
+			margin-top: span(1);
+
+			>.background{
+				height: 100%;
+			}
+		}
+
+		>.container{
+			.inner{
+				border-bottom: 1px solid $ui_gray;
+			}
+
+			.outer{
+				display: none;
+			}
+		}
+	}
 }
 
 &#news{
-	padding: 18rem 0;
+	padding: 18em 0;
 
 	>.container{
 		>.inner{
@@ -217,36 +264,63 @@
 			}
 
 			>.logo{
-				float: left;
+				@include span(1 of 4 first);
+				height: 0;
+				padding-bottom: span(1 of 4);
 				@include box-sizing(border-box);
+				background-size: 100% 100%;
 
 				&:not(.cultofmac) {
 					border: 1px solid $ui_gray;
 				}
 
 				&.adweek{
-					@include retina-icon('adweek');
+					background-image: image-url('logo/adweek.png');
 				}
 
 				&.cultofmac{
-					@include retina-icon('cultofmac');
+					background-image: image-url('logo/cultofmac.png');
 				}
 
 				&.fastcompany{
-					@include retina-icon('fastcompany');
+					background-image: image-url('logo/fastcompany.png');
 				}
 
 				&.digitaltrends{
-					@include retina-icon('digitaltrends');
+					background-image: image-url('logo/digitaltrends.png');
 				}
 			}
 
 			>p{
-				padding: 0 1em 0 6em;
+				@include span(3 of 4 last);
 				color: $almost_black;
-				font-size: 1.8rem;
+				font-size: 1.8em;
 				line-height: 1.333;
 				@include font-regularitalic;
+			}
+		}
+	}
+
+	/** MOBILE LAYOUT **/
+	@include breakpoint($break_phone) {
+		padding: 15em 0;
+
+		article{
+			@include span(90%);
+			@include push(5%);
+			text-align: center;
+		}
+
+		.testimonials{
+			@include full;
+			margin-top: span(2);
+
+			li{
+				@include full;
+
+				>p{
+					font-size: 2em;
+				}
 			}
 		}
 	}
@@ -304,7 +378,7 @@
 			}
 
 			li{
-				font-size: 1.6em;
+				font-size: 1.8em;
 				margin: .8em 0;
 				list-style-type: disc;
 				color: $orange;
@@ -329,10 +403,41 @@
 			background: rgba(black, .4);
 		}
 	}
+
+	/** ABOVE PHONE LAYOUT **/
+	@include breakpoint($break_above_phone) {
+		min-height: 700px;
+	}
+
+	/** MOBILE LAYOUT **/
+	@include breakpoint($break_phone) {
+		height: auto;
+
+		>.container{
+			padding: 15em 0;
+			@include box-sizing(border-box);
+		}
+
+		article{
+			@include span(90%);
+			@include push(5%);
+			text-align: center;
+
+			.qualities{
+				ul{
+					padding-left: 0;
+
+					>li{
+						list-style-type: none;
+					}
+				}
+			}
+		}
+	}
 }
 
 &#twitter{
-	padding: 19rem 0 4rem 0;
+	padding: 19em 0 4em 0;
 	border-bottom: 1px solid $ui_gray;
 	@include box-sizing(border-box);
 
@@ -459,13 +564,14 @@
 
 		.thumbs{
 			position: absolute;
-			bottom: 10px;
-			left: 50%;
-			@include translateY(-50%);
+			bottom: 0;
+			left: 5%;
+			width: 90%;
+			text-align: center;
 
 			li{
 				display: inline-block;
-				margin: 0 8px;
+				margin: 4px 8px;
 
 				>button{
 					width: 8px;
@@ -491,15 +597,71 @@
 		.tweets{
 			position: relative;
 			z-index: 0;
-			width: span(36);
 			padding: span(1) 0;
 			overflow: hidden;
 
-			li{
-				@include span(4 of 36);
+			iframe{
+				margin: 0 auto;
+			}
+		}
+	}
 
-				&:nth-child(9n) {
-					@include last;
+	/** ABOVE PHONE LAYOUT **/
+	@include breakpoint($break_above_phone) {
+		.tweet-scroller{
+			.tweets{
+				width: span(36);
+
+				li{
+					@include span(4 of 36);
+
+					&:nth-child(9n) {
+						@include last;
+					}
+
+					&:nth-child(9n+1) {
+						@include first;
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+
+	/** NARROW DESKTOP LAYOUT **/
+	@include breakpoint($break_standard_width) {
+		.tweet-container{
+			.gradient{
+				display: none;
+			}
+		}
+	}
+
+	/** MOBILE LAYOUT **/
+	@include breakpoint($break_phone) {
+		padding: 15em 0;
+
+		article{
+			text-align: center;
+		}
+
+		.tweet-container{
+			.prev, .next{
+				display: none;
+			}
+		}
+
+		.tweet-scroller{
+			.tweets{
+				width: span(216);
+				padding-bottom: span(2);
+
+				li{
+					@include span(12 of 216);
+
+					&:last-child{
+						@include last;
+					}
 				}
 			}
 		}
@@ -507,7 +669,7 @@
 }
 
 &#appstore{
-	padding-top: 15rem;
+	padding-top: 15em;
 
 	>.container{
 		>.inner{
@@ -522,10 +684,14 @@
 		}
 	}
 
+	article{
+		@include full;
+		margin-bottom: span(1);
+	}
+
 	.reviews{
 		@include with-layout($grid-more-gutter) {
 			@include container(12);
-			padding-top: span(1);
 
 			li{
 				@include span(4);
@@ -541,7 +707,7 @@
 				}
 
 				h3{
-					font-size: 2rem;
+					font-size: 2em;
 					line-height: 1.15;
 					@include font-bold;
 				}
@@ -557,8 +723,35 @@
 				}
 
 				p{
-					font-size: 1.8rem;
+					font-size: 1.8em;
 					line-height: 1.333;
+				}
+			}
+		}
+	}
+
+	/** MOBILE LAYOUT **/
+	@include breakpoint($break_phone) {
+		article{
+			@include span(90%);
+			@include push(5%);
+			text-align: center;
+		}
+
+		.reviews{
+			@include full;
+
+			li{
+				@include full;
+				padding: span(2) 0 0 0;
+				text-align: center;
+
+				h3{
+					font-size: 2.4em;
+				}
+
+				p{
+					font-size: 2em;
 				}
 			}
 		}

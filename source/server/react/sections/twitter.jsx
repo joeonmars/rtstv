@@ -7,31 +7,44 @@ var TweetEmbed = require('../tweetembed');
 
 var Twitter = React.createClass( {
 
-	getDefaultProps: function() {
-
-	    return {
-	    	totalPages: 3
-	    };
-	},
-
 	getInitialState: function() {
 
 	    return {
-	    	page: 0      
+	    	page: 0,
+	    	totalPages: 0
 	    };
 	},
 
 	componentWillUpdate: function(nextProps, nextState) {
 
-		if(nextState.page !== this.state.page) {
+		if(nextState.page !== this.state.page ||
+			nextState.totalPages !== this.state.totalPages) {
 
-			var pagePerc = 100 / this.props.totalPages;
+			var pagePerc = 100 / this.state.totalPages;
 
 			TweenMax.to(this.refs.tweets, .65, {
 				x: pagePerc * -nextState.page + '%',
 				ease: Expo.easeOut
 			});
 		}
+	},
+
+	componentDidMount: function() {
+
+		$(window).resize( this.resize );
+		this.resize();
+	},
+
+	resize: function() {
+
+		var singlePageWidth = $(this.refs.tweetScroller).outerWidth();
+		var totalPageWidth = $(this.refs.tweets).outerWidth();
+		var totalPages = Math.round(totalPageWidth / singlePageWidth);
+
+		this.setState({
+			page: 0,
+			totalPages: totalPages
+		});
 	},
 
 	toPage: function( page ) {
@@ -43,7 +56,7 @@ var Twitter = React.createClass( {
 
 	nextPage: function() {
 
-		this.toPage( Math.min(this.state.page + 1, this.props.totalPages - 1) );
+		this.toPage( Math.min(this.state.page + 1, this.state.totalPages - 1) );
 	},
 
 	prevPage: function() {
@@ -76,7 +89,7 @@ var Twitter = React.createClass( {
 		var data = this.props.data;
 
 		var prevDisabled = (this.state.page === 0);
-		var nextDisabled = (this.state.page === this.props.totalPages - 1);
+		var nextDisabled = (this.state.page === this.state.totalPages - 1);
 
 		return (
 			<BaseSection id='twitter'>
@@ -86,7 +99,7 @@ var Twitter = React.createClass( {
 				</article>
 
 				<div className='tweet-container'>
-					<div className='tweet-scroller'>
+					<div className='tweet-scroller' ref='tweetScroller'>
 						<ul className='tweets' ref='tweets'>
 							{data.tweets.map(this.renderTweet)}
 						</ul>
@@ -104,7 +117,7 @@ var Twitter = React.createClass( {
 						</button>
 					</div>
 					<ul className='thumbs'>
-						{_.times(this.props.totalPages, this.renderThumb)}
+						{_.times(this.state.totalPages, this.renderThumb)}
 					</ul>
 				</div>
 			</BaseSection>

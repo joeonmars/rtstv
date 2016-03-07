@@ -12,12 +12,13 @@
 // --- Global vars ---
 $break_wide_laptop: (min-width 1400px) (max-height 1040px);
 $break_laptop: max-height 840px;
-$break_phone: max-width 680px;
+$break_phone: max-width 700px;
+$break_above_phone: min-width 700px;
 
-$break_tablet_landscape: (min-width 680px) (max-width 1200px);
-$break_tablet_portrait: (min-width 680px) (max-width 800px);
+$break_tablet_landscape: (min-width 700px) (max-width 1200px);
+$break_tablet_portrait: (min-width 700px) (max-width 800px);
 
-$break_standard_width: max-width 1440px;
+$break_standard_width: max-width 1600px;
 
 $easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 $easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);

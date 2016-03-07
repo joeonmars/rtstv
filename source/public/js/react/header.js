@@ -13,11 +13,6 @@ var items = [
 		text: 'Advertise'
 	},
 	{
-		id: 'publishers',
-		url: 'https://www.reuters.tv/publishers',
-		text: 'Publishers'
-	},
-	{
 		id: 'press',
 		url: 'https://www.reuters.tv/press',
 		text: 'Press'

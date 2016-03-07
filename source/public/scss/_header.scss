@@ -3,7 +3,6 @@
 	padding: 5rem 0;
 	background: rgba(white, 0.97);
 	@include box-sizing(border-box);
-	@include transition(padding .5s $easeOutCubic, font-size .5s $easeOutCubic);
 
 	>.inner{
 		height: 100%;
@@ -59,14 +58,23 @@
 		font-size: .85rem;
 	}
 
+	@include breakpoint($break_above_phone) {
+		@include transition(padding .5s $easeOutCubic, font-size .5s $easeOutCubic);
+	}
+	
 	@include breakpoint($break_tablet_landscape) {
 		padding: 3rem 0;
 		font-size: .85rem;
 	}
 
 	@include breakpoint($break_phone) {
-		padding: 2rem 0 !important;
-		font-size: .75rem !important;
+		padding: 2rem 0;
+		font-size: .75rem;
+
+		&.compact{
+			padding: 1rem 0;
+			font-size: .65rem;
+		}
 
 		.logo{
 			width: 4em;

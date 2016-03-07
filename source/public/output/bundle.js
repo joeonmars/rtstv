@@ -39953,11 +39953,6 @@ var items = [
 		text: 'Advertise'
 	},
 	{
-		id: 'publishers',
-		url: 'https://www.reuters.tv/publishers',
-		text: 'Publishers'
-	},
-	{
 		id: 'press',
 		url: 'https://www.reuters.tv/press',
 		text: 'Press'
@@ -40664,31 +40659,44 @@ var TweetEmbed = require('../tweetembed');
 
 var Twitter = React.createClass( {displayName: "Twitter",
 
-	getDefaultProps: function() {
-
-	    return {
-	    	totalPages: 3
-	    };
-	},
-
 	getInitialState: function() {
 
 	    return {
-	    	page: 0      
+	    	page: 0,
+	    	totalPages: 0
 	    };
 	},
 
 	componentWillUpdate: function(nextProps, nextState) {
 
-		if(nextState.page !== this.state.page) {
+		if(nextState.page !== this.state.page ||
+			nextState.totalPages !== this.state.totalPages) {
 
-			var pagePerc = 100 / this.props.totalPages;
+			var pagePerc = 100 / this.state.totalPages;
 
 			TweenMax.to(this.refs.tweets, .65, {
 				x: pagePerc * -nextState.page + '%',
 				ease: Expo.easeOut
 			});
 		}
+	},
+
+	componentDidMount: function() {
+
+		$(window).resize( this.resize );
+		this.resize();
+	},
+
+	resize: function() {
+
+		var singlePageWidth = $(this.refs.tweetScroller).outerWidth();
+		var totalPageWidth = $(this.refs.tweets).outerWidth();
+		var totalPages = Math.round(totalPageWidth / singlePageWidth);
+
+		this.setState({
+			page: 0,
+			totalPages: totalPages
+		});
 	},
 
 	toPage: function( page ) {
@@ -40700,7 +40708,7 @@ var Twitter = React.createClass( {displayName: "Twitter",
 
 	nextPage: function() {
 
-		this.toPage( Math.min(this.state.page + 1, this.props.totalPages - 1) );
+		this.toPage( Math.min(this.state.page + 1, this.state.totalPages - 1) );
 	},
 
 	prevPage: function() {
@@ -40733,7 +40741,7 @@ var Twitter = React.createClass( {displayName: "Twitter",
 		var data = this.props.data;
 
 		var prevDisabled = (this.state.page === 0);
-		var nextDisabled = (this.state.page === this.props.totalPages - 1);
+		var nextDisabled = (this.state.page === this.state.totalPages - 1);
 
 		return (
 			React.createElement(BaseSection, {id: "twitter"}, 
@@ -40743,7 +40751,7 @@ var Twitter = React.createClass( {displayName: "Twitter",
 				), 
 
 				React.createElement("div", {className: "tweet-container"}, 
-					React.createElement("div", {className: "tweet-scroller"}, 
+					React.createElement("div", {className: "tweet-scroller", ref: "tweetScroller"}, 
 						React.createElement("ul", {className: "tweets", ref: "tweets"}, 
 							data.tweets.map(this.renderTweet)
 						)
@@ -40761,7 +40769,7 @@ var Twitter = React.createClass( {displayName: "Twitter",
 						)
 					), 
 					React.createElement("ul", {className: "thumbs"}, 
-						_.times(this.props.totalPages, this.renderThumb)
+						_.times(this.state.totalPages, this.renderThumb)
 					)
 				)
 			)
