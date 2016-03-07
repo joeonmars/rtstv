@@ -43,7 +43,6 @@
     "grunt-react": "^0.12.3",
     "grunt-remove-logging": "^0.2.0",
     "grunt-webfont": "~0.4.0",
-    "grunt-zip": "^0.17.1",
     "jquery": "^2.1.4",
     "remapify": "latest",
     "scrollmonitor": "^1.0.12"

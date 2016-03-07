@@ -217,7 +217,7 @@ module.exports = function( grunt ) {
 						'!public/images/icons-2x/**',
 						'!public/images/ui/**',
 						'!public/images/ui-2x/**',
-						'!public/fonts/fontcustom/icons',
+						'!public/fonts/fontcustom/icons/**',
 					],
 					dest: '../release',
 					filter: 'isFile',
@@ -245,15 +245,6 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		zip: {
-			release: {
-				cwd: '../release/',
-				src: [ '../release/**/*' ],
-				dest: '../release/andysawards-release-<%= new Date().getTime() %>.zip',
-				dot: true
-			}
-		},
-
 	} );
 
 	// These plugins provide necessary tasks.
@@ -269,7 +260,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-webfont' );
 	grunt.loadNpmTasks( 'grunt-nodemon' );
 	grunt.loadNpmTasks( 'grunt-concurrent' );
-	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Tasks.
 	grunt.registerTask( 'development', [
@@ -294,7 +284,6 @@ module.exports = function( grunt ) {
 		'clean:release',
 		'copy',
 		'clean:hidden',
-		'uglify:release',
-		'zip:release'
+		'uglify:release'
 	] );
 };
