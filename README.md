@@ -1,5 +1,5 @@
 #Reuters TV Reception
-A try on the Reuters TV webpage, to demonstrate my code skills and workflow for HTML/CSS/JS based development. 
+A try on the Reuters TV webpage, to demonstrate my coding skills and workflow for HTML/CSS/JS based development. 
 
 ![Home Page](https://s3.amazonaws.com/f.cl.ly/items/250x1I3k3A2v3O1g103a/rtstv.jpg?v=663d3b7c)
 
