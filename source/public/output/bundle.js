@@ -40387,7 +40387,7 @@ var Promo = React.createClass( {displayName: "Promo",
 		var nextSectionHeight = $(nextSection).outerHeight();
 		var toScrollTop = nextSectionScrollTop - (window.innerHeight - nextSectionHeight) / 2;
 
-		TweenMax.to( document.body, 1, {
+		TweenMax.to( window, 1, {
 			scrollTo: {
 				y: toScrollTop,
 				autoKill: true
@@ -40610,7 +40610,9 @@ var Realists = React.createClass( {displayName: "Realists",
 		};
 
 		return(
-			React.createElement("div", {className: "photo", style: style, ref: "photo"})
+			React.createElement("div", {className: "photo-container"}, 
+				React.createElement("div", {className: "photo", style: style, ref: "photo"})
+			)
 		);
 	},
 

@@ -383,27 +383,20 @@
 &#realists{
 	height: 90vh;
 	
-	>.container{
-		>.inner{
-			@include content-grid;
-		}
-		>.outer{
-			overflow: hidden;
-		}
-	}
-
 	.heading, .body, .qualities{
 		color: white;
 	}
 
 	>.container{
 		>.inner{
+			@include content-grid;
 			z-index: 1;
 		}
 
 		>.outer{
-			z-index: 0;
 			@include absoluteFullSize;
+			z-index: 0;
+			overflow: hidden;
 			background: black;
 		}
 	}
@@ -443,6 +436,11 @@
 				}
 			}
 		}
+	}
+
+	.photo-container{
+		@include absoluteFullSize;
+		overflow: hidden;
 	}
 
 	.photo{
@@ -614,12 +612,12 @@
 
 			&.left{
 				@include absoluteTopLeft;
-				@include background-image(linear-gradient(to right, white 30%, transparent));
+				@include background-image(linear-gradient(to right, rgba(white, 1) 30%, rgba(white, 0)));
 			}
 
 			&.right{
 				@include absoluteTopRight;
-				@include background-image(linear-gradient(to left, white 30%, transparent));
+				@include background-image(linear-gradient(to left, rgba(white, 1) 30%, rgba(white, 0)));
 			}
 		}
 

@@ -107,7 +107,6 @@ module.exports = function( grunt ) {
 		compass: {
 			options: {
 				sassDir: 'public/scss',
-				cssDir: 'public/css',
 				fontsDir: 'public/fonts',
 				imagesDir: 'public/images',
 				generatedImagesDir: 'public/images/generated',
@@ -119,12 +118,14 @@ module.exports = function( grunt ) {
 			},
 			development: {
 				options: {
+					cssDir: 'public/css',
 					outputStyle: 'nested', //nested, expanded, compact, compressed
 					environment: 'development',
 				}
 			},
 			production: {
 				options: {
+					cssDir: 'public/css/prod',
 					outputStyle: 'compressed', //nested, expanded, compact, compressed
 					environment: 'production',
 				}
@@ -211,6 +212,7 @@ module.exports = function( grunt ) {
 						'!Gemfile',
 						'!Gruntfile.js',
 						'!public/js/**',
+						'!public/css/prod/**',
 						'!public/scss/**',
 						'!public/output/bundle.map',
 						'!public/images/icons/**',
@@ -226,6 +228,14 @@ module.exports = function( grunt ) {
 					cwd: './',
 					src: 'public/output/bundle.js',
 					dest: '../release/public/output/bundle.debug.js'
+				}, {
+					cwd: './',
+					src: 'public/css/rtstv.css',
+					dest: '../release/public/css/rtstv.debug.css'
+				}, {
+					cwd: './',
+					src: 'public/css/prod/rtstv.css',
+					dest: '../release/public/css/rtstv.css'
 				} ]
 			}
 		},

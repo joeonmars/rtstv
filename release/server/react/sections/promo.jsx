@@ -30,11 +30,7 @@ var Promo = React.createClass( {
 
 	componentDidMount: function() {
 
-		$(window)
-			.resize( this.resize )
-			.scroll( this.onPageScroll );
-
-		this.resize();
+		$(window).scroll( this.onPageScroll );
 
 		// Disable page scroll
 		$('html').toggleClass('no-scrollbar', true);
@@ -93,7 +89,7 @@ var Promo = React.createClass( {
 		var nextSectionHeight = $(nextSection).outerHeight();
 		var toScrollTop = nextSectionScrollTop - (window.innerHeight - nextSectionHeight) / 2;
 
-		TweenMax.to( document.body, 1, {
+		TweenMax.to( window, 1, {
 			scrollTo: {
 				y: toScrollTop,
 				autoKill: true
@@ -230,7 +226,8 @@ var Promo = React.createClass( {
 
 		return (
 			<BaseSection id='promo' outer={this.renderOuter()}
-				handleEnteredViewport={this.onEnteredViewport} handleExitViewport={this.onExitViewport}>
+				handleEnteredViewport={this.onEnteredViewport} handleExitViewport={this.onExitViewport}
+				handleResize={this.resize}>
 
 				<article>
 					<div>

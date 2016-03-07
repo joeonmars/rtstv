@@ -16,7 +16,8 @@ var Layout = React.createClass( {
 
 	render: function() {
 
-		var cssPath = ( '/css/{filename}' ).replace( '{filename}', this.props.cssFileName );
+		var cssFileName = this.props.debug ? this.props.cssFileName.replace('.css', '.debug.css') : this.props.cssFileName;
+		var cssPath = ( '/css/{filename}' ).replace( '{filename}', cssFileName );
 
 		var jsPath = this.props.debug ? '/output/bundle.debug.js' : '/output/bundle.js';
 

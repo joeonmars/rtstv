@@ -89,7 +89,7 @@ var Promo = React.createClass( {
 		var nextSectionHeight = $(nextSection).outerHeight();
 		var toScrollTop = nextSectionScrollTop - (window.innerHeight - nextSectionHeight) / 2;
 
-		TweenMax.to( document.body, 1, {
+		TweenMax.to( window, 1, {
 			scrollTo: {
 				y: toScrollTop,
 				autoKill: true

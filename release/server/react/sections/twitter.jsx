@@ -29,12 +29,6 @@ var Twitter = React.createClass( {
 		}
 	},
 
-	componentDidMount: function() {
-
-		$(window).resize( this.resize );
-		this.resize();
-	},
-
 	resize: function() {
 
 		var singlePageWidth = $(this.refs.tweetScroller).outerWidth();
@@ -92,7 +86,9 @@ var Twitter = React.createClass( {
 		var nextDisabled = (this.state.page === this.state.totalPages - 1);
 
 		return (
-			<BaseSection id='twitter'>
+			<BaseSection id='twitter'
+				handleResize={this.resize}>
+
 				<article>
 					<h1 className='heading' dangerouslySetInnerHTML={{__html: data.heading}}></h1>
 					<h2 className='subheading' dangerouslySetInnerHTML={{__html: data.subheading}}></h2>
@@ -120,6 +116,7 @@ var Twitter = React.createClass( {
 						{_.times(this.state.totalPages, this.renderThumb)}
 					</ul>
 				</div>
+				
 			</BaseSection>
 		);
 	}

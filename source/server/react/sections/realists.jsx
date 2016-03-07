@@ -50,7 +50,9 @@ var Realists = React.createClass( {
 		};
 
 		return(
-			<div className='photo' style={style} ref='photo'></div>
+			<div className='photo-container'>
+				<div className='photo' style={style} ref='photo'></div>
+			</div>
 		);
 	},
 

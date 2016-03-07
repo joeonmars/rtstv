@@ -1,0 +1,239 @@
+#promo{
+	/** ANIMATE IN **/
+	.heading, .body{
+		@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+	}
+
+	.appstore, .googleplay{
+		@include animation(fade-in-from-bottom 1s $easeOutQuint both paused);
+	}
+
+	.heading{
+		@include animation-delay(.25s);
+	}
+
+	.body{
+		@include animation-delay(.40s);
+	}
+
+	.cta{
+		.appstore{
+			@include animation-delay(1.45s);
+		}
+
+		.googleplay{
+			@include animation-delay(1.50s);
+		}
+	}
+
+	&.entered-viewport{
+		.heading, .body, .appstore, .googleplay{
+			@include animation-play-state(running !important);
+		}
+	}
+
+	&:not(.entered-viewport){
+		.heading, .body, .cta{
+			display: none;
+		}
+	}
+}
+
+#news{
+	/** ANIMATE IN **/
+	.heading, .body{
+		@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+	}
+
+	.testimonials{
+		li{
+			.logo{
+				@include animation(expand .5s $easeOutQuint both paused);
+			}
+
+			p{
+				@include animation(fade-in-from-left .8s $easeOutQuint both paused);
+			}
+		}
+	}
+
+	.heading{
+		@include animation-delay(.15s);
+	}
+
+	.body{
+		@include animation-delay(.30s);
+	}
+
+	.testimonials{
+
+		@for $i from 1 through 4 {
+
+			$delay: ($i / 4 * 0.4);
+
+		    li:nth-child(#{$i}) {
+
+		    	.logo{
+					@include animation-delay(#{0.4 + $delay}s);
+		    	}
+
+		    	p{
+		    		@include animation-delay(#{0.6 + $delay}s);
+		    	}
+		    }
+		}
+	}
+
+	&.entered-viewport-once{
+		.heading, .body, .testimonials .logo, .testimonials p{
+			@include animation-play-state(running !important);
+		}
+	}
+}
+
+#realists{
+	/** ANIMATE IN **/
+	.heading, .body, .qualities{
+		@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+	}
+
+	.qualities li{
+		@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+	}
+
+	.photo-container{
+		@include animation(slide-in-from-left 3s $easeOutCubic both paused);
+	}
+
+	.heading{
+		@include animation-delay(.45s);
+	}
+
+	.body{
+		@include animation-delay(.60s);
+	}
+
+	.qualities{
+		@include animation-delay(.75s);
+
+		li{
+			@for $i from 1 through 6 {
+
+				$delay: (0.75 + $i / 6 * 0.4);
+
+			    &:nth-child(#{$i}) {
+			    	@include animation-delay(#{$delay}s);
+			    }
+			}
+		}
+	}
+
+	.photo-container{
+		@include animation-delay(.10s);
+	}
+
+	&.entered-viewport-once{
+		.heading, .body, .qualities, .qualities li, .photo-container{
+			@include animation-play-state(running !important);
+		}
+	}
+}
+
+#twitter{
+	/** ANIMATE IN **/
+	.heading, .subheading{
+		@include animation(fade-in-from-left .85s $easeOutCubic both paused);
+	}
+
+	.tweet-container{
+		@include animation(slight-expand 1.5s $easeInOutCubic both paused);
+	}
+
+	.heading{
+		@include animation-delay(.45s);
+	}
+
+	.subheading{
+		@include animation-delay(.60s);
+	}
+
+	.tweet-container{
+		@include animation-delay(.75s);
+	}
+
+	&.entered-viewport-once{
+		.heading, .subheading, .tweet-container{
+			@include animation-play-state(running !important);
+		}
+	}
+}
+
+#appstore{
+	/** ANIMATE IN **/
+	.heading, .subheading{
+		@include animation(fade-in-from-left .85s $easeOutCubic both paused);
+	}
+
+	.reviews{
+		@include animation(slight-expand 1.5s $easeInOutCubic both paused);
+
+		li{
+			h3, .stars, p{
+				@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+			}
+
+			.icon{
+				@include animation(fade-in .45s $easeInOutExpo both paused);
+			}
+		}
+	}
+
+	.heading{
+		@include animation-delay(.45s);
+	}
+
+	.subheading{
+		@include animation-delay(.60s);
+	}
+
+	.reviews{
+		@include animation-delay(.60s);
+
+		li{
+			@for $i from 1 through 6 {
+
+				$delay: (0.75 + $i / 6 * 0.4);
+
+			    &:nth-child(#{$i}) {
+			    	h3{
+			    		@include animation-delay(#{$delay}s);
+			    	}
+
+			    	.stars{
+			    		@include animation-delay(#{0.15 + $delay}s);
+			    	}
+
+			    	.icon{
+			    		@for $i from 1 through 5 {
+				    		$icon_delay: ($delay + 0.25 + $i / 5 * 0.45);
+
+						    &:nth-child(#{$i}) {
+						    	@include animation-delay(#{$icon_delay}s);
+						    }
+						}
+			    	}
+
+			    	p{
+			    		@include animation-delay(#{0.25 + $delay}s);
+			    	}
+			    }
+			}
+		}
+	}
+
+	&.entered-viewport-once{
+		.heading, .subheading, .reviews, .reviews h3, .reviews .stars, .reviews .icon, .reviews p{
+			@include animation-play-state(running !important);
+		}
+	}
+}
