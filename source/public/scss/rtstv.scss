@@ -9,11 +9,9 @@ html{
 	overflow-y: scroll;
 
 	&[data-mobile] {
-		@import "mobile";
 	}
 
 	&[data-desktop] {
-		@import "desktop";
 	}
 }
 

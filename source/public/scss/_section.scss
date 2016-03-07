@@ -18,6 +18,14 @@
 		}
 	}
 
+	@include breakpoint($break_wide_laptop) {
+		font-size: .9rem;
+	}
+
+	@include breakpoint($break_tablet_landscape) {
+		font-size: .8rem;
+	}
+
 	@include breakpoint($break_phone) {
 		font-size: .7rem;
 	}
@@ -204,7 +212,6 @@
 			@include span(90%);
 			@include push(5%);
 			height: auto;
-			text-align: center;
 
 			.cta{
 				display: none;
@@ -252,7 +259,11 @@
 
 		li{
 			@include span(4 of 8);
-			padding-bottom: span(1);
+			margin-bottom: span(1);
+
+			&:last-child{
+				margin-bottom: 0;
+			}
 
 			&:nth-child(odd) {
 				@include first;
@@ -264,9 +275,6 @@
 			}
 
 			>.logo{
-				@include span(1 of 4 first);
-				height: 0;
-				padding-bottom: span(1 of 4);
 				@include box-sizing(border-box);
 				background-size: 100% 100%;
 
@@ -292,11 +300,44 @@
 			}
 
 			>p{
-				@include span(3 of 4 last);
 				color: $almost_black;
 				font-size: 1.8em;
 				line-height: 1.333;
 				@include font-regularitalic;
+			}
+		}
+	}
+
+	/** ABOVE PHONE LAYOUT **/
+	@include breakpoint($break_above_phone) {
+		.testimonials{
+			li{
+				>.logo{
+					@include span(1 of 4 first);
+					height: 0;
+					padding-bottom: span(1 of 4);
+				}
+
+				>p{
+					@include span(3 of 4 last);
+				}
+			}
+		}
+	}
+
+	/** TABLET PORTRAIT LAYOUT **/
+	@include breakpoint($break_tablet_portrait) {
+		article{
+			@include span(4);
+		}
+
+		.testimonials{
+			@include span(6);
+			@include push(1);
+
+			li{
+				@include full;
+				margin-bottom: span(2);
 			}
 		}
 	}
@@ -317,8 +358,20 @@
 
 			li{
 				@include full;
+				margin-bottom: span(2);
+
+				>.logo{
+					@include span(1 of 5);
+					@include push(2 of 5);
+					height: 0;
+					padding-bottom: span(1 of 5);
+				}
 
 				>p{
+					@include span(8 of 12);
+					@include push(2);
+					margin-top: 2em;
+					text-align: center;
 					font-size: 2em;
 				}
 			}
@@ -409,6 +462,13 @@
 		min-height: 700px;
 	}
 
+	/** TABLET PORTRAIT LAYOUT **/
+	@include breakpoint($break_tablet_portrait) {
+		article{
+			@include span(6 last);
+		}
+	}
+
 	/** MOBILE LAYOUT **/
 	@include breakpoint($break_phone) {
 		height: auto;
@@ -459,7 +519,7 @@
 			>button{
 				position: absolute;
 				top: 0;
-				width: 20rem;
+				width: 20em;
 				height: 100%;
 				background: white;
 				opacity: 0;
@@ -468,7 +528,7 @@
 
 				>span{
 					color: $text_gray;
-					font-size: 7rem;
+					font-size: 7em;
 					@include transition(opacity .25s, transform .6s $easeOutQuint);
 				}
 
@@ -487,7 +547,7 @@
 					content: '';
 					position: absolute;
 					top: 0;
-					width: 20rem;
+					width: 20em;
 					height: 100%;
 					background-size: contain;
 					background-repeat: no-repeat;
@@ -633,6 +693,35 @@
 		.tweet-container{
 			.gradient{
 				display: none;
+			}
+		}
+	}
+
+	/** TABLET LANDSCAPE LAYOUT **/
+	@include breakpoint($break_tablet_landscape) {
+		.tweet-container{
+			.prev, .next{
+				//display: none;
+
+				>button{
+					@include translateX(0);
+					opacity: 1;
+					visibility: visible;
+
+					>span{
+						@include translateX(0);
+					}
+				}
+			}
+		}
+
+		.tweet-scroller{
+			.tweets{
+				width: span(108);
+
+				li{
+					@include span(12 of 108);
+				}
 			}
 		}
 	}

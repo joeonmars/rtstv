@@ -13,13 +13,6 @@
 }
 
 button{
-  text-transform: uppercase;
+  font-size: inherit;
   @extend %reset-button;
-
-  &.text-button{
-    padding: 1rem 2rem;
-    border: 1px solid #000;
-    font-size: 1.7rem;
-    background: #fff;
-  }
 }

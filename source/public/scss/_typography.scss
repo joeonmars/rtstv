@@ -49,7 +49,10 @@ html{
 	}
 
 	@include breakpoint($break_phone) {
-		text-align: center;
+		
+		&:not(.no-decoration) {
+			text-align: center;
+		}
 
 		&:after{
 			margin-left: auto;
