@@ -12,10 +12,10 @@ var BaseSection = React.createClass( {
 	    return {
 	    	id: '',
 	    	outer: null,
-	    	scrollWatchOffset: 0,
 	    	handleEnteredViewport: nullFunction,
 	    	handleExitViewport: nullFunction,
-	    	handleEnteredViewportOnce: nullFunction
+	    	handleEnteredViewportOnce: nullFunction,
+	    	handleResize: nullFunction
 	    };
 	},
 
@@ -32,11 +32,22 @@ var BaseSection = React.createClass( {
 		var ScrollMonitor = require('scrollmonitor');
 		var sectionEl = ReactDOM.findDOMNode(this);
 
-		this.scrollWatcher = ScrollMonitor.create( sectionEl, {
-			top: this.props.scrollWatchOffset
-		} );
+		this.scrollWatcher = ScrollMonitor.create( sectionEl );
 
 		this.startScrollWatching();
+
+		this.resize();
+		$(window).resize(this.resize);
+	},
+
+	resize: function() {
+
+		// Recalculate the offset top, so the scrollwatcher always trigger events
+		// when half of the section moved inside of viewport
+		var sectionEl = ReactDOM.findDOMNode(this);
+		this.scrollWatcher.offsets.top = -$(sectionEl).outerHeight() / 2;
+
+		this.props.handleResize();
 	},
 
 	startScrollWatching: function() {

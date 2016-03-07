@@ -40149,10 +40149,10 @@ var BaseSection = React.createClass( {displayName: "BaseSection",
 	    return {
 	    	id: '',
 	    	outer: null,
-	    	scrollWatchOffset: 0,
 	    	handleEnteredViewport: nullFunction,
 	    	handleExitViewport: nullFunction,
-	    	handleEnteredViewportOnce: nullFunction
+	    	handleEnteredViewportOnce: nullFunction,
+	    	handleResize: nullFunction
 	    };
 	},
 
@@ -40169,11 +40169,22 @@ var BaseSection = React.createClass( {displayName: "BaseSection",
 		var ScrollMonitor = require('scrollmonitor');
 		var sectionEl = ReactDOM.findDOMNode(this);
 
-		this.scrollWatcher = ScrollMonitor.create( sectionEl, {
-			top: this.props.scrollWatchOffset
-		} );
+		this.scrollWatcher = ScrollMonitor.create( sectionEl );
 
 		this.startScrollWatching();
+
+		this.resize();
+		$(window).resize(this.resize);
+	},
+
+	resize: function() {
+
+		// Recalculate the offset top, so the scrollwatcher always trigger events
+		// when half of the section moved inside of viewport
+		var sectionEl = ReactDOM.findDOMNode(this);
+		this.scrollWatcher.offsets.top = -$(sectionEl).outerHeight() / 2;
+
+		this.props.handleResize();
 	},
 
 	startScrollWatching: function() {
@@ -40317,11 +40328,7 @@ var Promo = React.createClass( {displayName: "Promo",
 
 	componentDidMount: function() {
 
-		$(window)
-			.resize( this.resize )
-			.scroll( this.onPageScroll );
-
-		this.resize();
+		$(window).scroll( this.onPageScroll );
 
 		// Disable page scroll
 		$('html').toggleClass('no-scrollbar', true);
@@ -40517,7 +40524,8 @@ var Promo = React.createClass( {displayName: "Promo",
 
 		return (
 			React.createElement(BaseSection, {id: "promo", outer: this.renderOuter(), 
-				handleEnteredViewport: this.onEnteredViewport, handleExitViewport: this.onExitViewport}, 
+				handleEnteredViewport: this.onEnteredViewport, handleExitViewport: this.onExitViewport, 
+				handleResize: this.resize}, 
 
 				React.createElement("article", null, 
 					React.createElement("div", null, 
@@ -40681,12 +40689,6 @@ var Twitter = React.createClass( {displayName: "Twitter",
 		}
 	},
 
-	componentDidMount: function() {
-
-		$(window).resize( this.resize );
-		this.resize();
-	},
-
 	resize: function() {
 
 		var singlePageWidth = $(this.refs.tweetScroller).outerWidth();
@@ -40744,7 +40746,9 @@ var Twitter = React.createClass( {displayName: "Twitter",
 		var nextDisabled = (this.state.page === this.state.totalPages - 1);
 
 		return (
-			React.createElement(BaseSection, {id: "twitter"}, 
+			React.createElement(BaseSection, {id: "twitter", 
+				handleResize: this.resize}, 
+
 				React.createElement("article", null, 
 					React.createElement("h1", {className: "heading", dangerouslySetInnerHTML: {__html: data.heading}}), 
 					React.createElement("h2", {className: "subheading", dangerouslySetInnerHTML: {__html: data.subheading}})
@@ -40772,6 +40776,7 @@ var Twitter = React.createClass( {displayName: "Twitter",
 						_.times(this.state.totalPages, this.renderThumb)
 					)
 				)
+				
 			)
 		);
 	}
