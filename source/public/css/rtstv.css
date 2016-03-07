@@ -548,403 +548,449 @@ button {
 html {
   overflow-x: auto;
   overflow-y: scroll; }
-  html[data-desktop] #promo {
+  html[data-mobile][data-mobile='iPad'] #promo {
+    height: calc(100vh - 57px) !important; }
+  html[data-mobile][data-mobile='iPad'] #realists {
+    height: calc(90vh - 57px) !important; }
+  html[data-desktop] #promo, html[data-tablet='iPad'] #promo {
     /** ANIMATE IN **/ }
-    html[data-desktop] #promo .heading, html[data-desktop] #promo .body {
-      -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
-    html[data-desktop] #promo .appstore, html[data-desktop] #promo .googleplay {
-      -moz-animation: fade-in-from-bottom 1s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      -webkit-animation: fade-in-from-bottom 1s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      animation: fade-in-from-bottom 1s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
-    html[data-desktop] #promo .heading {
+    html[data-desktop] #promo .heading, html[data-desktop] #promo .body, html[data-tablet='iPad'] #promo .heading, html[data-tablet='iPad'] #promo .body {
+      -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #promo .appstore, html[data-desktop] #promo .googleplay, html[data-tablet='iPad'] #promo .appstore, html[data-tablet='iPad'] #promo .googleplay {
+      -moz-animation: fade-in-from-bottom 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -webkit-animation: fade-in-from-bottom 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+      animation: fade-in-from-bottom 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #promo .heading, html[data-tablet='iPad'] #promo .heading {
       -moz-animation-delay: 0.25s;
       -webkit-animation-delay: 0.25s;
       animation-delay: 0.25s; }
-    html[data-desktop] #promo .body {
+    html[data-desktop] #promo .body, html[data-tablet='iPad'] #promo .body {
       -moz-animation-delay: 0.4s;
       -webkit-animation-delay: 0.4s;
       animation-delay: 0.4s; }
-    html[data-desktop] #promo .cta .appstore {
+    html[data-desktop] #promo .cta .appstore, html[data-tablet='iPad'] #promo .cta .appstore {
       -moz-animation-delay: 1.45s;
       -webkit-animation-delay: 1.45s;
       animation-delay: 1.45s; }
-    html[data-desktop] #promo .cta .googleplay {
+    html[data-desktop] #promo .cta .googleplay, html[data-tablet='iPad'] #promo .cta .googleplay {
       -moz-animation-delay: 1.5s;
       -webkit-animation-delay: 1.5s;
       animation-delay: 1.5s; }
-    html[data-desktop] #promo.entered-viewport .heading, html[data-desktop] #promo.entered-viewport .body, html[data-desktop] #promo.entered-viewport .appstore, html[data-desktop] #promo.entered-viewport .googleplay {
+    html[data-desktop] #promo.entered-viewport .heading, html[data-desktop] #promo.entered-viewport .body, html[data-desktop] #promo.entered-viewport .appstore, html[data-desktop] #promo.entered-viewport .googleplay, html[data-tablet='iPad'] #promo.entered-viewport .heading, html[data-tablet='iPad'] #promo.entered-viewport .body, html[data-tablet='iPad'] #promo.entered-viewport .appstore, html[data-tablet='iPad'] #promo.entered-viewport .googleplay {
       -moz-animation-play-state: running !important;
       -webkit-animation-play-state: running !important;
       animation-play-state: running !important; }
-    html[data-desktop] #promo:not(.entered-viewport) .heading, html[data-desktop] #promo:not(.entered-viewport) .body, html[data-desktop] #promo:not(.entered-viewport) .cta {
+    html[data-desktop] #promo:not(.entered-viewport) .heading, html[data-desktop] #promo:not(.entered-viewport) .body, html[data-desktop] #promo:not(.entered-viewport) .cta, html[data-tablet='iPad'] #promo:not(.entered-viewport) .heading, html[data-tablet='iPad'] #promo:not(.entered-viewport) .body, html[data-tablet='iPad'] #promo:not(.entered-viewport) .cta {
       display: none; }
-  html[data-desktop] #news {
+  html[data-desktop] #news, html[data-tablet='iPad'] #news {
     /** ANIMATE IN **/ }
-    html[data-desktop] #news .heading, html[data-desktop] #news .body {
-      -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
-    html[data-desktop] #news .testimonials li .logo {
-      -moz-animation: expand 0.5s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      -webkit-animation: expand 0.5s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      animation: expand 0.5s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
-    html[data-desktop] #news .testimonials li p {
-      -moz-animation: fade-in-from-left 0.8s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      -webkit-animation: fade-in-from-left 0.8s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      animation: fade-in-from-left 0.8s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
-    html[data-desktop] #news .heading {
+    html[data-desktop] #news .heading, html[data-desktop] #news .body, html[data-tablet='iPad'] #news .heading, html[data-tablet='iPad'] #news .body {
+      -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #news .testimonials li .logo, html[data-tablet='iPad'] #news .testimonials li .logo {
+      -moz-animation: expand 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -webkit-animation: expand 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+      animation: expand 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #news .testimonials li p, html[data-tablet='iPad'] #news .testimonials li p {
+      -moz-animation: fade-in-from-left 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -webkit-animation: fade-in-from-left 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+      animation: fade-in-from-left 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #news .heading, html[data-tablet='iPad'] #news .heading {
       -moz-animation-delay: 0.15s;
       -webkit-animation-delay: 0.15s;
       animation-delay: 0.15s; }
-    html[data-desktop] #news .body {
+    html[data-desktop] #news .body, html[data-tablet='iPad'] #news .body {
       -moz-animation-delay: 0.3s;
       -webkit-animation-delay: 0.3s;
       animation-delay: 0.3s; }
-    html[data-desktop] #news .testimonials li:nth-child(1) .logo {
+    html[data-desktop] #news .testimonials li:nth-child(1) .logo, html[data-tablet='iPad'] #news .testimonials li:nth-child(1) .logo {
       -moz-animation-delay: 0.5s;
       -webkit-animation-delay: 0.5s;
       animation-delay: 0.5s; }
-    html[data-desktop] #news .testimonials li:nth-child(1) p {
+    html[data-desktop] #news .testimonials li:nth-child(1) p, html[data-tablet='iPad'] #news .testimonials li:nth-child(1) p {
       -moz-animation-delay: 0.7s;
       -webkit-animation-delay: 0.7s;
       animation-delay: 0.7s; }
-    html[data-desktop] #news .testimonials li:nth-child(2) .logo {
+    html[data-desktop] #news .testimonials li:nth-child(2) .logo, html[data-tablet='iPad'] #news .testimonials li:nth-child(2) .logo {
       -moz-animation-delay: 0.6s;
       -webkit-animation-delay: 0.6s;
       animation-delay: 0.6s; }
-    html[data-desktop] #news .testimonials li:nth-child(2) p {
+    html[data-desktop] #news .testimonials li:nth-child(2) p, html[data-tablet='iPad'] #news .testimonials li:nth-child(2) p {
       -moz-animation-delay: 0.8s;
       -webkit-animation-delay: 0.8s;
       animation-delay: 0.8s; }
-    html[data-desktop] #news .testimonials li:nth-child(3) .logo {
+    html[data-desktop] #news .testimonials li:nth-child(3) .logo, html[data-tablet='iPad'] #news .testimonials li:nth-child(3) .logo {
       -moz-animation-delay: 0.7s;
       -webkit-animation-delay: 0.7s;
       animation-delay: 0.7s; }
-    html[data-desktop] #news .testimonials li:nth-child(3) p {
+    html[data-desktop] #news .testimonials li:nth-child(3) p, html[data-tablet='iPad'] #news .testimonials li:nth-child(3) p {
       -moz-animation-delay: 0.9s;
       -webkit-animation-delay: 0.9s;
       animation-delay: 0.9s; }
-    html[data-desktop] #news .testimonials li:nth-child(4) .logo {
+    html[data-desktop] #news .testimonials li:nth-child(4) .logo, html[data-tablet='iPad'] #news .testimonials li:nth-child(4) .logo {
       -moz-animation-delay: 0.8s;
       -webkit-animation-delay: 0.8s;
       animation-delay: 0.8s; }
-    html[data-desktop] #news .testimonials li:nth-child(4) p {
+    html[data-desktop] #news .testimonials li:nth-child(4) p, html[data-tablet='iPad'] #news .testimonials li:nth-child(4) p {
       -moz-animation-delay: 1s;
       -webkit-animation-delay: 1s;
       animation-delay: 1s; }
-    html[data-desktop] #news.entered-viewport-once .heading, html[data-desktop] #news.entered-viewport-once .body, html[data-desktop] #news.entered-viewport-once .testimonials .logo, html[data-desktop] #news.entered-viewport-once .testimonials p {
+    html[data-desktop] #news.entered-viewport-once .heading, html[data-desktop] #news.entered-viewport-once .body, html[data-desktop] #news.entered-viewport-once .testimonials .logo, html[data-desktop] #news.entered-viewport-once .testimonials p, html[data-tablet='iPad'] #news.entered-viewport-once .heading, html[data-tablet='iPad'] #news.entered-viewport-once .body, html[data-tablet='iPad'] #news.entered-viewport-once .testimonials .logo, html[data-tablet='iPad'] #news.entered-viewport-once .testimonials p {
       -moz-animation-play-state: running !important;
       -webkit-animation-play-state: running !important;
       animation-play-state: running !important; }
-  html[data-desktop] #realists {
+  html[data-desktop] #realists, html[data-tablet='iPad'] #realists {
     /** ANIMATE IN **/ }
-    html[data-desktop] #realists .heading, html[data-desktop] #realists .body, html[data-desktop] #realists .qualities {
-      -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
-    html[data-desktop] #realists .qualities li {
-      -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-      animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
-    html[data-desktop] #realists .photo-container {
-      -moz-animation: slide-in-from-left 3s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-      -webkit-animation: slide-in-from-left 3s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-      animation: slide-in-from-left 3s cubic-bezier(0.215, 0.61, 0.355, 1) both paused; }
-    html[data-desktop] #realists .heading {
+    html[data-desktop] #realists .heading, html[data-desktop] #realists .body, html[data-desktop] #realists .qualities, html[data-tablet='iPad'] #realists .heading, html[data-tablet='iPad'] #realists .body, html[data-tablet='iPad'] #realists .qualities {
+      -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #realists .qualities li, html[data-tablet='iPad'] #realists .qualities li {
+      -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #realists .photo-container, html[data-tablet='iPad'] #realists .photo-container {
+      -moz-animation: slide-in-from-left 3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      -webkit-animation: slide-in-from-left 3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in-from-left 3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #realists .heading, html[data-tablet='iPad'] #realists .heading {
       -moz-animation-delay: 0.45s;
       -webkit-animation-delay: 0.45s;
       animation-delay: 0.45s; }
-    html[data-desktop] #realists .body {
+    html[data-desktop] #realists .body, html[data-tablet='iPad'] #realists .body {
       -moz-animation-delay: 0.6s;
       -webkit-animation-delay: 0.6s;
       animation-delay: 0.6s; }
-    html[data-desktop] #realists .qualities {
+    html[data-desktop] #realists .qualities, html[data-tablet='iPad'] #realists .qualities {
       -moz-animation-delay: 0.75s;
       -webkit-animation-delay: 0.75s;
       animation-delay: 0.75s; }
-      html[data-desktop] #realists .qualities li:nth-child(1) {
+      html[data-desktop] #realists .qualities li:nth-child(1), html[data-tablet='iPad'] #realists .qualities li:nth-child(1) {
         -moz-animation-delay: 0.81667s;
         -webkit-animation-delay: 0.81667s;
         animation-delay: 0.81667s; }
-      html[data-desktop] #realists .qualities li:nth-child(2) {
+      html[data-desktop] #realists .qualities li:nth-child(2), html[data-tablet='iPad'] #realists .qualities li:nth-child(2) {
         -moz-animation-delay: 0.88333s;
         -webkit-animation-delay: 0.88333s;
         animation-delay: 0.88333s; }
-      html[data-desktop] #realists .qualities li:nth-child(3) {
+      html[data-desktop] #realists .qualities li:nth-child(3), html[data-tablet='iPad'] #realists .qualities li:nth-child(3) {
         -moz-animation-delay: 0.95s;
         -webkit-animation-delay: 0.95s;
         animation-delay: 0.95s; }
-      html[data-desktop] #realists .qualities li:nth-child(4) {
+      html[data-desktop] #realists .qualities li:nth-child(4), html[data-tablet='iPad'] #realists .qualities li:nth-child(4) {
         -moz-animation-delay: 1.01667s;
         -webkit-animation-delay: 1.01667s;
         animation-delay: 1.01667s; }
-      html[data-desktop] #realists .qualities li:nth-child(5) {
+      html[data-desktop] #realists .qualities li:nth-child(5), html[data-tablet='iPad'] #realists .qualities li:nth-child(5) {
         -moz-animation-delay: 1.08333s;
         -webkit-animation-delay: 1.08333s;
         animation-delay: 1.08333s; }
-      html[data-desktop] #realists .qualities li:nth-child(6) {
+      html[data-desktop] #realists .qualities li:nth-child(6), html[data-tablet='iPad'] #realists .qualities li:nth-child(6) {
         -moz-animation-delay: 1.15s;
         -webkit-animation-delay: 1.15s;
         animation-delay: 1.15s; }
-    html[data-desktop] #realists .photo-container {
+    html[data-desktop] #realists .photo-container, html[data-tablet='iPad'] #realists .photo-container {
       -moz-animation-delay: 0.1s;
       -webkit-animation-delay: 0.1s;
       animation-delay: 0.1s; }
-    html[data-desktop] #realists.entered-viewport-once .heading, html[data-desktop] #realists.entered-viewport-once .body, html[data-desktop] #realists.entered-viewport-once .qualities, html[data-desktop] #realists.entered-viewport-once .qualities li, html[data-desktop] #realists.entered-viewport-once .photo-container {
+    html[data-desktop] #realists.entered-viewport-once .heading, html[data-desktop] #realists.entered-viewport-once .body, html[data-desktop] #realists.entered-viewport-once .qualities, html[data-desktop] #realists.entered-viewport-once .qualities li, html[data-desktop] #realists.entered-viewport-once .photo-container, html[data-tablet='iPad'] #realists.entered-viewport-once .heading, html[data-tablet='iPad'] #realists.entered-viewport-once .body, html[data-tablet='iPad'] #realists.entered-viewport-once .qualities, html[data-tablet='iPad'] #realists.entered-viewport-once .qualities li, html[data-tablet='iPad'] #realists.entered-viewport-once .photo-container {
       -moz-animation-play-state: running !important;
       -webkit-animation-play-state: running !important;
       animation-play-state: running !important; }
-  html[data-desktop] #twitter {
+  html[data-desktop] #twitter, html[data-tablet='iPad'] #twitter {
     /** ANIMATE IN **/ }
-    html[data-desktop] #twitter .heading, html[data-desktop] #twitter .subheading {
-      -moz-animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-      -webkit-animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-      animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused; }
-    html[data-desktop] #twitter .tweet-container {
-      -moz-animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both paused;
-      -webkit-animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both paused;
-      animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both paused; }
-    html[data-desktop] #twitter .heading {
+    html[data-desktop] #twitter .heading, html[data-desktop] #twitter .subheading, html[data-tablet='iPad'] #twitter .heading, html[data-tablet='iPad'] #twitter .subheading {
+      -moz-animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      -webkit-animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #twitter .tweet-container, html[data-tablet='iPad'] #twitter .tweet-container {
+      -moz-animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+      -webkit-animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+      animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #twitter .heading, html[data-tablet='iPad'] #twitter .heading {
       -moz-animation-delay: 0.45s;
       -webkit-animation-delay: 0.45s;
       animation-delay: 0.45s; }
-    html[data-desktop] #twitter .subheading {
+    html[data-desktop] #twitter .subheading, html[data-tablet='iPad'] #twitter .subheading {
       -moz-animation-delay: 0.6s;
       -webkit-animation-delay: 0.6s;
       animation-delay: 0.6s; }
-    html[data-desktop] #twitter .tweet-container {
+    html[data-desktop] #twitter .tweet-container, html[data-tablet='iPad'] #twitter .tweet-container {
       -moz-animation-delay: 0.75s;
       -webkit-animation-delay: 0.75s;
       animation-delay: 0.75s; }
-    html[data-desktop] #twitter.entered-viewport-once .heading, html[data-desktop] #twitter.entered-viewport-once .subheading, html[data-desktop] #twitter.entered-viewport-once .tweet-container {
+    html[data-desktop] #twitter.entered-viewport-once .heading, html[data-desktop] #twitter.entered-viewport-once .subheading, html[data-desktop] #twitter.entered-viewport-once .tweet-container, html[data-tablet='iPad'] #twitter.entered-viewport-once .heading, html[data-tablet='iPad'] #twitter.entered-viewport-once .subheading, html[data-tablet='iPad'] #twitter.entered-viewport-once .tweet-container {
       -moz-animation-play-state: running !important;
       -webkit-animation-play-state: running !important;
       animation-play-state: running !important; }
-  html[data-desktop] #appstore {
+  html[data-desktop] #appstore, html[data-tablet='iPad'] #appstore {
     /** ANIMATE IN **/ }
-    html[data-desktop] #appstore .heading, html[data-desktop] #appstore .subheading {
-      -moz-animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-      -webkit-animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-      animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both paused; }
-    html[data-desktop] #appstore .reviews {
-      -moz-animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both paused;
-      -webkit-animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both paused;
-      animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both paused; }
-      html[data-desktop] #appstore .reviews li h3, html[data-desktop] #appstore .reviews li .stars, html[data-desktop] #appstore .reviews li p {
-        -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-        -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-        animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
-      html[data-desktop] #appstore .reviews li .icon {
-        -moz-animation: fade-in 0.45s cubic-bezier(1, 0, 0, 1) both paused;
-        -webkit-animation: fade-in 0.45s cubic-bezier(1, 0, 0, 1) both paused;
-        animation: fade-in 0.45s cubic-bezier(1, 0, 0, 1) both paused; }
-    html[data-desktop] #appstore .heading {
+    html[data-desktop] #appstore .heading, html[data-desktop] #appstore .subheading, html[data-tablet='iPad'] #appstore .heading, html[data-tablet='iPad'] #appstore .subheading {
+      -moz-animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      -webkit-animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: fade-in-from-left 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+    html[data-desktop] #appstore .reviews, html[data-tablet='iPad'] #appstore .reviews {
+      -moz-animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+      -webkit-animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+      animation: slight-expand 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+      html[data-desktop] #appstore .reviews li h3, html[data-desktop] #appstore .reviews li .stars, html[data-desktop] #appstore .reviews li p, html[data-tablet='iPad'] #appstore .reviews li h3, html[data-tablet='iPad'] #appstore .reviews li .stars, html[data-tablet='iPad'] #appstore .reviews li p {
+        -moz-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+        -webkit-animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+        animation: fade-in-from-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+        -moz-animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused; }
+      html[data-desktop] #appstore .reviews li .icon, html[data-tablet='iPad'] #appstore .reviews li .icon {
+        -moz-animation: fade-in 0.45s cubic-bezier(1, 0, 0, 1) both;
+        -webkit-animation: fade-in 0.45s cubic-bezier(1, 0, 0, 1) both;
+        animation: fade-in 0.45s cubic-bezier(1, 0, 0, 1) both;
+        -moz-animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused; }
+    html[data-desktop] #appstore .heading, html[data-tablet='iPad'] #appstore .heading {
       -moz-animation-delay: 0.45s;
       -webkit-animation-delay: 0.45s;
       animation-delay: 0.45s; }
-    html[data-desktop] #appstore .subheading {
+    html[data-desktop] #appstore .subheading, html[data-tablet='iPad'] #appstore .subheading {
       -moz-animation-delay: 0.6s;
       -webkit-animation-delay: 0.6s;
       animation-delay: 0.6s; }
-    html[data-desktop] #appstore .reviews {
+    html[data-desktop] #appstore .reviews, html[data-tablet='iPad'] #appstore .reviews {
       -moz-animation-delay: 0.6s;
       -webkit-animation-delay: 0.6s;
       animation-delay: 0.6s; }
-      html[data-desktop] #appstore .reviews li:nth-child(1) h3 {
+      html[data-desktop] #appstore .reviews li:nth-child(1) h3, html[data-tablet='iPad'] #appstore .reviews li:nth-child(1) h3 {
         -moz-animation-delay: 0.81667s;
         -webkit-animation-delay: 0.81667s;
         animation-delay: 0.81667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(1) .stars {
+      html[data-desktop] #appstore .reviews li:nth-child(1) .stars, html[data-tablet='iPad'] #appstore .reviews li:nth-child(1) .stars {
         -moz-animation-delay: 0.96667s;
         -webkit-animation-delay: 0.96667s;
         animation-delay: 0.96667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(1) {
+      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(1), html[data-tablet='iPad'] #appstore .reviews li:nth-child(1) .icon:nth-child(1) {
         -moz-animation-delay: 1.15667s;
         -webkit-animation-delay: 1.15667s;
         animation-delay: 1.15667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(2) {
+      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(2), html[data-tablet='iPad'] #appstore .reviews li:nth-child(1) .icon:nth-child(2) {
         -moz-animation-delay: 1.24667s;
         -webkit-animation-delay: 1.24667s;
         animation-delay: 1.24667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(3) {
+      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(3), html[data-tablet='iPad'] #appstore .reviews li:nth-child(1) .icon:nth-child(3) {
         -moz-animation-delay: 1.33667s;
         -webkit-animation-delay: 1.33667s;
         animation-delay: 1.33667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(4) {
+      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(4), html[data-tablet='iPad'] #appstore .reviews li:nth-child(1) .icon:nth-child(4) {
         -moz-animation-delay: 1.42667s;
         -webkit-animation-delay: 1.42667s;
         animation-delay: 1.42667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(5) {
+      html[data-desktop] #appstore .reviews li:nth-child(1) .icon:nth-child(5), html[data-tablet='iPad'] #appstore .reviews li:nth-child(1) .icon:nth-child(5) {
         -moz-animation-delay: 1.51667s;
         -webkit-animation-delay: 1.51667s;
         animation-delay: 1.51667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(1) p {
+      html[data-desktop] #appstore .reviews li:nth-child(1) p, html[data-tablet='iPad'] #appstore .reviews li:nth-child(1) p {
         -moz-animation-delay: 1.06667s;
         -webkit-animation-delay: 1.06667s;
         animation-delay: 1.06667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(2) h3 {
+      html[data-desktop] #appstore .reviews li:nth-child(2) h3, html[data-tablet='iPad'] #appstore .reviews li:nth-child(2) h3 {
         -moz-animation-delay: 0.88333s;
         -webkit-animation-delay: 0.88333s;
         animation-delay: 0.88333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(2) .stars {
+      html[data-desktop] #appstore .reviews li:nth-child(2) .stars, html[data-tablet='iPad'] #appstore .reviews li:nth-child(2) .stars {
         -moz-animation-delay: 1.03333s;
         -webkit-animation-delay: 1.03333s;
         animation-delay: 1.03333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(1) {
+      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(1), html[data-tablet='iPad'] #appstore .reviews li:nth-child(2) .icon:nth-child(1) {
         -moz-animation-delay: 1.22333s;
         -webkit-animation-delay: 1.22333s;
         animation-delay: 1.22333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(2) {
+      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(2), html[data-tablet='iPad'] #appstore .reviews li:nth-child(2) .icon:nth-child(2) {
         -moz-animation-delay: 1.31333s;
         -webkit-animation-delay: 1.31333s;
         animation-delay: 1.31333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(3) {
+      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(3), html[data-tablet='iPad'] #appstore .reviews li:nth-child(2) .icon:nth-child(3) {
         -moz-animation-delay: 1.40333s;
         -webkit-animation-delay: 1.40333s;
         animation-delay: 1.40333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(4) {
+      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(4), html[data-tablet='iPad'] #appstore .reviews li:nth-child(2) .icon:nth-child(4) {
         -moz-animation-delay: 1.49333s;
         -webkit-animation-delay: 1.49333s;
         animation-delay: 1.49333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(5) {
+      html[data-desktop] #appstore .reviews li:nth-child(2) .icon:nth-child(5), html[data-tablet='iPad'] #appstore .reviews li:nth-child(2) .icon:nth-child(5) {
         -moz-animation-delay: 1.58333s;
         -webkit-animation-delay: 1.58333s;
         animation-delay: 1.58333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(2) p {
+      html[data-desktop] #appstore .reviews li:nth-child(2) p, html[data-tablet='iPad'] #appstore .reviews li:nth-child(2) p {
         -moz-animation-delay: 1.13333s;
         -webkit-animation-delay: 1.13333s;
         animation-delay: 1.13333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(3) h3 {
+      html[data-desktop] #appstore .reviews li:nth-child(3) h3, html[data-tablet='iPad'] #appstore .reviews li:nth-child(3) h3 {
         -moz-animation-delay: 0.95s;
         -webkit-animation-delay: 0.95s;
         animation-delay: 0.95s; }
-      html[data-desktop] #appstore .reviews li:nth-child(3) .stars {
+      html[data-desktop] #appstore .reviews li:nth-child(3) .stars, html[data-tablet='iPad'] #appstore .reviews li:nth-child(3) .stars {
         -moz-animation-delay: 1.1s;
         -webkit-animation-delay: 1.1s;
         animation-delay: 1.1s; }
-      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(1) {
+      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(1), html[data-tablet='iPad'] #appstore .reviews li:nth-child(3) .icon:nth-child(1) {
         -moz-animation-delay: 1.29s;
         -webkit-animation-delay: 1.29s;
         animation-delay: 1.29s; }
-      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(2) {
+      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(2), html[data-tablet='iPad'] #appstore .reviews li:nth-child(3) .icon:nth-child(2) {
         -moz-animation-delay: 1.38s;
         -webkit-animation-delay: 1.38s;
         animation-delay: 1.38s; }
-      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(3) {
+      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(3), html[data-tablet='iPad'] #appstore .reviews li:nth-child(3) .icon:nth-child(3) {
         -moz-animation-delay: 1.47s;
         -webkit-animation-delay: 1.47s;
         animation-delay: 1.47s; }
-      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(4) {
+      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(4), html[data-tablet='iPad'] #appstore .reviews li:nth-child(3) .icon:nth-child(4) {
         -moz-animation-delay: 1.56s;
         -webkit-animation-delay: 1.56s;
         animation-delay: 1.56s; }
-      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(5) {
+      html[data-desktop] #appstore .reviews li:nth-child(3) .icon:nth-child(5), html[data-tablet='iPad'] #appstore .reviews li:nth-child(3) .icon:nth-child(5) {
         -moz-animation-delay: 1.65s;
         -webkit-animation-delay: 1.65s;
         animation-delay: 1.65s; }
-      html[data-desktop] #appstore .reviews li:nth-child(3) p {
+      html[data-desktop] #appstore .reviews li:nth-child(3) p, html[data-tablet='iPad'] #appstore .reviews li:nth-child(3) p {
         -moz-animation-delay: 1.2s;
         -webkit-animation-delay: 1.2s;
         animation-delay: 1.2s; }
-      html[data-desktop] #appstore .reviews li:nth-child(4) h3 {
+      html[data-desktop] #appstore .reviews li:nth-child(4) h3, html[data-tablet='iPad'] #appstore .reviews li:nth-child(4) h3 {
         -moz-animation-delay: 1.01667s;
         -webkit-animation-delay: 1.01667s;
         animation-delay: 1.01667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(4) .stars {
+      html[data-desktop] #appstore .reviews li:nth-child(4) .stars, html[data-tablet='iPad'] #appstore .reviews li:nth-child(4) .stars {
         -moz-animation-delay: 1.16667s;
         -webkit-animation-delay: 1.16667s;
         animation-delay: 1.16667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(1) {
+      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(1), html[data-tablet='iPad'] #appstore .reviews li:nth-child(4) .icon:nth-child(1) {
         -moz-animation-delay: 1.35667s;
         -webkit-animation-delay: 1.35667s;
         animation-delay: 1.35667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(2) {
+      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(2), html[data-tablet='iPad'] #appstore .reviews li:nth-child(4) .icon:nth-child(2) {
         -moz-animation-delay: 1.44667s;
         -webkit-animation-delay: 1.44667s;
         animation-delay: 1.44667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(3) {
+      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(3), html[data-tablet='iPad'] #appstore .reviews li:nth-child(4) .icon:nth-child(3) {
         -moz-animation-delay: 1.53667s;
         -webkit-animation-delay: 1.53667s;
         animation-delay: 1.53667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(4) {
+      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(4), html[data-tablet='iPad'] #appstore .reviews li:nth-child(4) .icon:nth-child(4) {
         -moz-animation-delay: 1.62667s;
         -webkit-animation-delay: 1.62667s;
         animation-delay: 1.62667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(5) {
+      html[data-desktop] #appstore .reviews li:nth-child(4) .icon:nth-child(5), html[data-tablet='iPad'] #appstore .reviews li:nth-child(4) .icon:nth-child(5) {
         -moz-animation-delay: 1.71667s;
         -webkit-animation-delay: 1.71667s;
         animation-delay: 1.71667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(4) p {
+      html[data-desktop] #appstore .reviews li:nth-child(4) p, html[data-tablet='iPad'] #appstore .reviews li:nth-child(4) p {
         -moz-animation-delay: 1.26667s;
         -webkit-animation-delay: 1.26667s;
         animation-delay: 1.26667s; }
-      html[data-desktop] #appstore .reviews li:nth-child(5) h3 {
+      html[data-desktop] #appstore .reviews li:nth-child(5) h3, html[data-tablet='iPad'] #appstore .reviews li:nth-child(5) h3 {
         -moz-animation-delay: 1.08333s;
         -webkit-animation-delay: 1.08333s;
         animation-delay: 1.08333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(5) .stars {
+      html[data-desktop] #appstore .reviews li:nth-child(5) .stars, html[data-tablet='iPad'] #appstore .reviews li:nth-child(5) .stars {
         -moz-animation-delay: 1.23333s;
         -webkit-animation-delay: 1.23333s;
         animation-delay: 1.23333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(1) {
+      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(1), html[data-tablet='iPad'] #appstore .reviews li:nth-child(5) .icon:nth-child(1) {
         -moz-animation-delay: 1.42333s;
         -webkit-animation-delay: 1.42333s;
         animation-delay: 1.42333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(2) {
+      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(2), html[data-tablet='iPad'] #appstore .reviews li:nth-child(5) .icon:nth-child(2) {
         -moz-animation-delay: 1.51333s;
         -webkit-animation-delay: 1.51333s;
         animation-delay: 1.51333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(3) {
+      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(3), html[data-tablet='iPad'] #appstore .reviews li:nth-child(5) .icon:nth-child(3) {
         -moz-animation-delay: 1.60333s;
         -webkit-animation-delay: 1.60333s;
         animation-delay: 1.60333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(4) {
+      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(4), html[data-tablet='iPad'] #appstore .reviews li:nth-child(5) .icon:nth-child(4) {
         -moz-animation-delay: 1.69333s;
         -webkit-animation-delay: 1.69333s;
         animation-delay: 1.69333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(5) {
+      html[data-desktop] #appstore .reviews li:nth-child(5) .icon:nth-child(5), html[data-tablet='iPad'] #appstore .reviews li:nth-child(5) .icon:nth-child(5) {
         -moz-animation-delay: 1.78333s;
         -webkit-animation-delay: 1.78333s;
         animation-delay: 1.78333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(5) p {
+      html[data-desktop] #appstore .reviews li:nth-child(5) p, html[data-tablet='iPad'] #appstore .reviews li:nth-child(5) p {
         -moz-animation-delay: 1.33333s;
         -webkit-animation-delay: 1.33333s;
         animation-delay: 1.33333s; }
-      html[data-desktop] #appstore .reviews li:nth-child(6) h3 {
+      html[data-desktop] #appstore .reviews li:nth-child(6) h3, html[data-tablet='iPad'] #appstore .reviews li:nth-child(6) h3 {
         -moz-animation-delay: 1.15s;
         -webkit-animation-delay: 1.15s;
         animation-delay: 1.15s; }
-      html[data-desktop] #appstore .reviews li:nth-child(6) .stars {
+      html[data-desktop] #appstore .reviews li:nth-child(6) .stars, html[data-tablet='iPad'] #appstore .reviews li:nth-child(6) .stars {
         -moz-animation-delay: 1.3s;
         -webkit-animation-delay: 1.3s;
         animation-delay: 1.3s; }
-      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(1) {
+      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(1), html[data-tablet='iPad'] #appstore .reviews li:nth-child(6) .icon:nth-child(1) {
         -moz-animation-delay: 1.49s;
         -webkit-animation-delay: 1.49s;
         animation-delay: 1.49s; }
-      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(2) {
+      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(2), html[data-tablet='iPad'] #appstore .reviews li:nth-child(6) .icon:nth-child(2) {
         -moz-animation-delay: 1.58s;
         -webkit-animation-delay: 1.58s;
         animation-delay: 1.58s; }
-      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(3) {
+      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(3), html[data-tablet='iPad'] #appstore .reviews li:nth-child(6) .icon:nth-child(3) {
         -moz-animation-delay: 1.67s;
         -webkit-animation-delay: 1.67s;
         animation-delay: 1.67s; }
-      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(4) {
+      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(4), html[data-tablet='iPad'] #appstore .reviews li:nth-child(6) .icon:nth-child(4) {
         -moz-animation-delay: 1.76s;
         -webkit-animation-delay: 1.76s;
         animation-delay: 1.76s; }
-      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(5) {
+      html[data-desktop] #appstore .reviews li:nth-child(6) .icon:nth-child(5), html[data-tablet='iPad'] #appstore .reviews li:nth-child(6) .icon:nth-child(5) {
         -moz-animation-delay: 1.85s;
         -webkit-animation-delay: 1.85s;
         animation-delay: 1.85s; }
-      html[data-desktop] #appstore .reviews li:nth-child(6) p {
+      html[data-desktop] #appstore .reviews li:nth-child(6) p, html[data-tablet='iPad'] #appstore .reviews li:nth-child(6) p {
         -moz-animation-delay: 1.4s;
         -webkit-animation-delay: 1.4s;
         animation-delay: 1.4s; }
-    html[data-desktop] #appstore.entered-viewport-once .heading, html[data-desktop] #appstore.entered-viewport-once .subheading, html[data-desktop] #appstore.entered-viewport-once .reviews, html[data-desktop] #appstore.entered-viewport-once .reviews h3, html[data-desktop] #appstore.entered-viewport-once .reviews .stars, html[data-desktop] #appstore.entered-viewport-once .reviews .icon, html[data-desktop] #appstore.entered-viewport-once .reviews p {
+    html[data-desktop] #appstore.entered-viewport-once .heading, html[data-desktop] #appstore.entered-viewport-once .subheading, html[data-desktop] #appstore.entered-viewport-once .reviews, html[data-desktop] #appstore.entered-viewport-once .reviews h3, html[data-desktop] #appstore.entered-viewport-once .reviews .stars, html[data-desktop] #appstore.entered-viewport-once .reviews .icon, html[data-desktop] #appstore.entered-viewport-once .reviews p, html[data-tablet='iPad'] #appstore.entered-viewport-once .heading, html[data-tablet='iPad'] #appstore.entered-viewport-once .subheading, html[data-tablet='iPad'] #appstore.entered-viewport-once .reviews, html[data-tablet='iPad'] #appstore.entered-viewport-once .reviews h3, html[data-tablet='iPad'] #appstore.entered-viewport-once .reviews .stars, html[data-tablet='iPad'] #appstore.entered-viewport-once .reviews .icon, html[data-tablet='iPad'] #appstore.entered-viewport-once .reviews p {
       -moz-animation-play-state: running !important;
       -webkit-animation-play-state: running !important;
       animation-play-state: running !important; }
@@ -988,7 +1034,7 @@ body {
   background-image: url('../images/promo-shadow.png?1457212197');
   background-repeat: repeat-x;
   overflow: hidden;
-  /** ABOVE PHONE LAYOUT **/
+  /** ABOVE TABLET LAYOUT **/
   /** MOBILE LAYOUT **/ }
   #main > section#promo:not(.entered-viewport) figure .background, #main > section#promo:not(.entered-viewport) figure .app-background, #main > section#promo:not(.entered-viewport) figure .app-sponsor {
     display: none; }
@@ -1117,9 +1163,12 @@ body {
       -ms-transform-origin: center bottom;
       -webkit-transform-origin: center bottom;
       transform-origin: center bottom;
-      -moz-animation: figure-slide-in 1s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-      -webkit-animation: figure-slide-in 1s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-      animation: figure-slide-in 1s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both paused; }
+      -moz-animation: figure-slide-in 1s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      -webkit-animation: figure-slide-in 1s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: figure-slide-in 1s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      -moz-animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
       #main > section#promo figure > .background > .screen {
         position: absolute;
         background: black;
@@ -1132,9 +1181,12 @@ body {
           height: 100%;
           background-image: url('../images/promo-app-background.png?1457281134');
           background-size: 100% 100%;
-          -moz-animation: app-launch 0.75s 0.95s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-          -webkit-animation: app-launch 0.75s 0.95s cubic-bezier(0.23, 1, 0.32, 1) both paused;
-          animation: app-launch 0.75s 0.95s cubic-bezier(0.23, 1, 0.32, 1) both paused; }
+          -moz-animation: app-launch 0.75s 0.95s cubic-bezier(0.23, 1, 0.32, 1) both;
+          -webkit-animation: app-launch 0.75s 0.95s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: app-launch 0.75s 0.95s cubic-bezier(0.23, 1, 0.32, 1) both;
+          -moz-animation-play-state: paused;
+          -webkit-animation-play-state: paused;
+          animation-play-state: paused; }
         #main > section#promo figure > .background > .screen > .app-sponsor {
           position: absolute;
           top: 0;
@@ -1146,9 +1198,12 @@ body {
           background-size: 100% auto;
           background-repeat: no-repeat;
           background-position: bottom;
-          -moz-animation: app-sponsor-slide-in 0.75s 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-          -webkit-animation: app-sponsor-slide-in 0.75s 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both paused;
-          animation: app-sponsor-slide-in 0.75s 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both paused; }
+          -moz-animation: app-sponsor-slide-in 0.75s 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+          -webkit-animation: app-sponsor-slide-in 0.75s 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+          animation: app-sponsor-slide-in 0.75s 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+          -moz-animation-play-state: paused;
+          -webkit-animation-play-state: paused;
+          animation-play-state: paused; }
   #main > section#promo .control {
     width: 100%;
     height: 6rem;
@@ -1216,7 +1271,7 @@ body {
         transform: scale(0.85, 0.85); }
         #main > section#promo .control > button:active > .icon:before {
           opacity: .5; }
-  @media (min-width: 700px) {
+  @media (min-width: 1040px) {
     #main > section#promo {
       min-height: 700px; } }
   @media (max-width: 700px) {
@@ -1323,7 +1378,7 @@ body {
         font-family: 'knowledgeRegularItalicRegular';
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     #main > section#news .testimonials li > .logo {
       width: 21.73913%;
       float: left;
@@ -1391,7 +1446,7 @@ body {
             font-size: 2em; } }
 #main > section#realists {
   height: 90vh;
-  /** ABOVE PHONE LAYOUT **/
+  /** ABOVE TABLET LAYOUT **/
   /** TABLET PORTRAIT LAYOUT **/
   /** MOBILE LAYOUT **/ }
   #main > section#realists .heading, #main > section#realists .body, #main > section#realists .qualities {
@@ -1479,7 +1534,7 @@ body {
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.4); }
-  @media (min-width: 700px) {
+  @media (min-width: 1040px) {
     #main > section#realists {
       min-height: 700px; } }
   @media (min-width: 700px) and (max-width: 800px) {
@@ -1514,6 +1569,7 @@ body {
   /** ABOVE PHONE LAYOUT **/
   /** NARROW DESKTOP LAYOUT **/
   /** TABLET LANDSCAPE LAYOUT **/
+  /** TABLET PORTRAIT LAYOUT **/
   /** MOBILE LAYOUT **/ }
   #main > section#twitter article {
     max-width: 1320px;
@@ -1717,7 +1773,7 @@ body {
       overflow: hidden; }
       #main > section#twitter .tweet-scroller .tweets iframe {
         margin: 0 auto; }
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     #main > section#twitter .tweet-scroller .tweets {
       width: 302.8169%; }
       #main > section#twitter .tweet-scroller .tweets li {
@@ -1740,7 +1796,8 @@ body {
       -webkit-transform: translateX(0);
       transform: translateX(0);
       opacity: 1;
-      visibility: visible; }
+      visibility: visible;
+      font-size: .6rem; }
       #main > section#twitter .tweet-container .prev > button > span, #main > section#twitter .tweet-container .next > button > span {
         -moz-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -1752,6 +1809,9 @@ body {
         width: 10.97372%;
         float: left;
         margin-right: 0.15456%; } }
+  @media (min-width: 700px) and (max-width: 800px) {
+    #main > section#twitter .tweet-container .prev > button, #main > section#twitter .tweet-container .next > button {
+      font-size: .4rem; } }
   @media (max-width: 700px) {
     #main > section#twitter {
       padding: 15em 0; }
@@ -1969,7 +2029,7 @@ body {
       padding: 1.5rem 0;
       border-bottom: 1px solid #dedfe0;
       font-size: .85rem; }
-    @media (min-width: 700px) {
+    @media (min-width: 720px) {
       #main-header header {
         -moz-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
         -o-transition: padding 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), font-size 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);

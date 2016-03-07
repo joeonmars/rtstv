@@ -109,7 +109,8 @@
 			background-size: contain;
 			background-repeat: no-repeat;
 			@include transform-origin(center, bottom);
-			@include animation(figure-slide-in 1s 0.5s $easeOutCubic both paused);
+			@include animation(figure-slide-in 1s 0.5s $easeOutCubic both);
+			@include animation-play-state(paused);
 
 			>.screen{
 				position: absolute;
@@ -120,7 +121,8 @@
 					@include absoluteFullSize;
 					background-image: image-url('promo-app-background.png');
 					background-size: 100% 100%;
-					@include animation(app-launch .75s 0.95s $easeOutQuint both paused);
+					@include animation(app-launch .75s 0.95s $easeOutQuint both);
+					@include animation-play-state(paused);
 				}
 
 				>.app-sponsor{
@@ -130,7 +132,8 @@
 					background-size: 100% auto;
 					background-repeat: no-repeat;
 					background-position: bottom;
-					@include animation(app-sponsor-slide-in .75s 0.9s $easeOutCubic both paused);
+					@include animation(app-sponsor-slide-in .75s 0.9s $easeOutCubic both);
+					@include animation-play-state(paused);
 				}
 			}
 		}
@@ -199,8 +202,8 @@
 		}
 	}
 
-	/** ABOVE PHONE LAYOUT **/
-	@include breakpoint($break_above_phone) {
+	/** ABOVE TABLET LAYOUT **/
+	@include breakpoint($break_above_tablet) {
 		min-height: 700px;
 	}
 
@@ -456,8 +459,8 @@
 		}
 	}
 
-	/** ABOVE PHONE LAYOUT **/
-	@include breakpoint($break_above_phone) {
+	/** ABOVE TABLET LAYOUT **/
+	@include breakpoint($break_above_tablet) {
 		min-height: 700px;
 	}
 
@@ -700,12 +703,11 @@
 	@include breakpoint($break_tablet_landscape) {
 		.tweet-container{
 			.prev, .next{
-				//display: none;
-
 				>button{
 					@include translateX(0);
 					opacity: 1;
 					visibility: visible;
+					font-size: .6rem;
 
 					>span{
 						@include translateX(0);
@@ -720,6 +722,17 @@
 
 				li{
 					@include span(12 of 108);
+				}
+			}
+		}
+	}
+
+	/** TABLET PORTRAIT LAYOUT **/
+	@include breakpoint($break_tablet_portrait) {
+		.tweet-container{
+			.prev, .next{
+				>button{
+					font-size: .4rem;
 				}
 			}
 		}

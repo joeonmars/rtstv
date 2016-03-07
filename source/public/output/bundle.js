@@ -40180,9 +40180,9 @@ var BaseSection = React.createClass( {displayName: "BaseSection",
 	resize: function() {
 
 		// Recalculate the offset top, so the scrollwatcher always trigger events
-		// when half of the section moved inside of viewport
+		// when one third of the section moved inside of viewport
 		var sectionEl = ReactDOM.findDOMNode(this);
-		this.scrollWatcher.offsets.top = -$(sectionEl).outerHeight() / 2;
+		this.scrollWatcher.offsets.top = -$(sectionEl).outerHeight() * (1/3);
 
 		this.props.handleResize();
 	},

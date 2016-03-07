@@ -1,11 +1,13 @@
 #promo{
 	/** ANIMATE IN **/
 	.heading, .body{
-		@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+		@include animation(fade-in-from-bottom .85s $easeOutQuint both);
+		@include animation-play-state(paused);
 	}
 
 	.appstore, .googleplay{
-		@include animation(fade-in-from-bottom 1s $easeOutQuint both paused);
+		@include animation(fade-in-from-bottom 1s $easeOutQuint both);
+		@include animation-play-state(paused);
 	}
 
 	.heading{
@@ -42,17 +44,20 @@
 #news{
 	/** ANIMATE IN **/
 	.heading, .body{
-		@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+		@include animation(fade-in-from-bottom .85s $easeOutQuint both);
+		@include animation-play-state(paused);
 	}
 
 	.testimonials{
 		li{
 			.logo{
-				@include animation(expand .5s $easeOutQuint both paused);
+				@include animation(expand .5s $easeOutQuint both);
+				@include animation-play-state(paused);
 			}
 
 			p{
-				@include animation(fade-in-from-left .8s $easeOutQuint both paused);
+				@include animation(fade-in-from-left .8s $easeOutQuint both);
+				@include animation-play-state(paused);
 			}
 		}
 	}
@@ -94,15 +99,18 @@
 #realists{
 	/** ANIMATE IN **/
 	.heading, .body, .qualities{
-		@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+		@include animation(fade-in-from-bottom .85s $easeOutQuint both);
+		@include animation-play-state(paused);
 	}
 
 	.qualities li{
-		@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+		@include animation(fade-in-from-bottom .85s $easeOutQuint both);
+		@include animation-play-state(paused);
 	}
 
 	.photo-container{
-		@include animation(slide-in-from-left 3s $easeOutCubic both paused);
+		@include animation(slide-in-from-left 3s $easeOutCubic both);
+		@include animation-play-state(paused);
 	}
 
 	.heading{
@@ -142,11 +150,13 @@
 #twitter{
 	/** ANIMATE IN **/
 	.heading, .subheading{
-		@include animation(fade-in-from-left .85s $easeOutCubic both paused);
+		@include animation(fade-in-from-left .85s $easeOutCubic both);
+		@include animation-play-state(paused);
 	}
 
 	.tweet-container{
-		@include animation(slight-expand 1.5s $easeInOutCubic both paused);
+		@include animation(slight-expand 1.5s $easeInOutCubic both);
+		@include animation-play-state(paused);
 	}
 
 	.heading{
@@ -171,19 +181,23 @@
 #appstore{
 	/** ANIMATE IN **/
 	.heading, .subheading{
-		@include animation(fade-in-from-left .85s $easeOutCubic both paused);
+		@include animation(fade-in-from-left .85s $easeOutCubic both);
+		@include animation-play-state(paused);
 	}
 
 	.reviews{
-		@include animation(slight-expand 1.5s $easeInOutCubic both paused);
+		@include animation(slight-expand 1.5s $easeInOutCubic both);
+		@include animation-play-state(paused);
 
 		li{
 			h3, .stars, p{
-				@include animation(fade-in-from-bottom .85s $easeOutQuint both paused);
+				@include animation(fade-in-from-bottom .85s $easeOutQuint both);
+				@include animation-play-state(paused);
 			}
 
 			.icon{
-				@include animation(fade-in .45s $easeInOutExpo both paused);
+				@include animation(fade-in .45s $easeInOutExpo both);
+				@include animation-play-state(paused);
 			}
 		}
 	}

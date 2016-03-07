@@ -9,9 +9,10 @@ html{
 	overflow-y: scroll;
 
 	&[data-mobile] {
+		@import "mobile";
 	}
 
-	&[data-desktop] {
+	&[data-desktop], &[data-tablet='iPad'] {
 		@import "desktop";
 	}
 }

@@ -12,10 +12,11 @@
 // --- Global vars ---
 $break_wide_laptop: (min-width 1024px) (max-width 1600px);
 $break_phone: max-width 700px;
-$break_above_phone: min-width 700px;
+$break_above_phone: min-width 720px;
 
 $break_tablet_landscape: (min-width 700px) (max-width 1024px);
 $break_tablet_portrait: (min-width 700px) (max-width 800px);
+$break_above_tablet: min-width 1040px;
 
 $break_standard_width: max-width 1600px;
 

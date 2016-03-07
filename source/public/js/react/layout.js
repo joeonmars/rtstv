@@ -21,9 +21,11 @@ var Layout = React.createClass( {displayName: "Layout",
 
 		var jsPath = this.props.debug ? '/output/bundle.debug.js' : '/output/bundle.js';
 
+		var isDesktop = !this.props.mobile ? true : null;
+
 		return (
 			React.createElement("html", {lang: "en", 
-				"data-desktop": !this.props.mobile, 
+				"data-desktop": isDesktop, 
 				"data-mobile": this.props.mobile, "data-phone": this.props.phone, "data-tablet": this.props.tablet}, 
 
 				React.createElement("head", null, 
