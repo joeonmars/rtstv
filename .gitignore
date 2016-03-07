@@ -3,7 +3,6 @@
 node_modules
 Gemfile.lock
 .sass-cache
-release/**/*
 **/*/react/**/*.js
 source/public/fonts/fontcustom/*.svg
 source/public/fonts/fontcustom/*.eot
