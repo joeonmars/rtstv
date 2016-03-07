@@ -35,14 +35,11 @@ app.get( '/', routes.index );
 // start listening
 var localPort = 3010;
 var listeningPort = process.env.PORT || localPort;
-var host = process.env.HOST || require( 'my-local-ip' )();
 var port = process.env.PORT || listeningPort;
 
 var onServerStart = function() {
 
-	GLOBAL.SERVER_URL = 'http://' + host + ( port ? ':' + port : '' );
-
-	console.log( 'Server started: ' + GLOBAL.SERVER_URL );
+	console.log( 'Server started on port: ' + port );
 };
 
 var server = app.listen( listeningPort, onServerStart );
